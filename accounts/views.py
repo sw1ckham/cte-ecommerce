@@ -3,6 +3,8 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from accounts.models import Profile
+
 
 
 # Create your views here.
@@ -50,10 +52,16 @@ def registration(request):
         registration_form = UserRegistrationForm(request.POST)
 
         if registration_form.is_valid():
-            registration_form.save()
+            user = registration_form.save()
 
+            user.refresh_from_db()
+            user.profile.first_name = form.cleaned_data.get('first_name')
+            user.profile.last_name = form.cleaned.data.get('last_name')
+            user.profile.email = form.cleaned.data.get('email')
+            user.save()
             user = auth.authenticate(username=request.POST['username'],
-                                    password=request.POST['password1'])
+                                        password=request.POST['password'])
+
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have been successfully registered!")
