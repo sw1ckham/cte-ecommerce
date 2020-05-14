@@ -55,13 +55,14 @@ def registration(request):
             user = registration_form.save()
 
             user.refresh_from_db()
-            user.profile.first_name = form.cleaned_data.get('first_name')
-            user.profile.last_name = form.cleaned.data.get('last_name')
-            user.profile.email = form.cleaned.data.get('email')
+            user.profile.first_name = registration_form.cleaned_data.get('first_name')
+            user.profile.last_name = registration_form.cleaned.data.get('last_name')
+            user.profile.email = registration_form.cleaned.data.get('email')
+            profile.user = request.user 
             user.save()
             user = auth.authenticate(username=request.POST['username'],
                                         password=request.POST['password'])
-
+            
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have been successfully registered!")

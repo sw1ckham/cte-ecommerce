@@ -6,17 +6,18 @@ from django.dispatch import receiver
 # Create your models here.
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=150)
-    bio = models.TextField()
+    user = models.ForeignKey(User, null=False,
+                              default=1, on_delete=models.SET_DEFAULT)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 @receiver(post_save, sender=User)
-def update_profile_signal(sender, instance, created, **kwargs):
+def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-    instance.profile.save()
+
+
