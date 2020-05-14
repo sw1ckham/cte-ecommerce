@@ -1,1 +1,1 @@
-FROM gitpod/workspace-CTE-ecommerce
+FROM gitpod/workspace-cte-ecommerce
