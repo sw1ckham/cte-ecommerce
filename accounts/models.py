@@ -9,8 +9,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=150, blank=True)
-    user = models.ForeignKey(User, null=False,
-                              default=1, on_delete=models.SET_DEFAULT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user
