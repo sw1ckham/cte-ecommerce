@@ -16,6 +16,7 @@
             <form method="POST">
                     {% csrf_token %} 
                     {{ registration_form | as_bootstrap }}
+                    {{ profile_form | as_bootstrap }}
                     <button class="btn btn-default" type="submit">Register</button>
             </form>
         </div>
