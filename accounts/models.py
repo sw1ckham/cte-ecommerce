@@ -8,7 +8,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
-    email = models.EmailField(max_length=150)
+    email = models.EmailField(max_length=150, blank=True)
     user = models.ForeignKey(User, null=False,
                               default=1, on_delete=models.SET_DEFAULT)
 
@@ -16,8 +16,9 @@ class Profile(models.Model):
         return self.user
 
 @receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
+def update_profile_signal(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+        instance.profile.save()
 
 
