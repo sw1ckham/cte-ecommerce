@@ -12,10 +12,11 @@ class UserLoginForm(forms.Form):
 
 class UserRegistrationForm(UserCreationForm):
     """Form used to register a new user"""
+    
 
-    first_name = forms.CharField(max_length=100)
-    last_name = forms.CharField(max_length=100)
-
+    email = forms.EmailInput()
+    username = forms.CharField(
+        max_length=30)
     password1 = forms.CharField(
         label="Password", 
         widget=forms.PasswordInput)
@@ -25,7 +26,7 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['email', 'username', 'first_name', 'last_name', 'password1', 'password2']
+        fields = ['email', 'username', 'password1', 'password2']
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -46,6 +47,16 @@ class UserRegistrationForm(UserCreationForm):
             raise ValidationError("Passwords must match")
 
         return password2
+
+class ProfileForm(forms.ModelForm):
+    first_name = forms.CharField(
+        max_length="100")
+    last_name = forms.CharField(
+        max_length="100")
+    class Meta:
+        model = Profile
+        fields = ['first_name', 'last_name']
+
 
 
     
