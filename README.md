@@ -28,9 +28,54 @@ CTE-Ecommerce
 
 [**Credits**](#credits)
 
+### Business Goals
+
+* Increase social media traffic
+* Showcase all artwork in organised albums
+* Provide a contact point for customers, fans or collaborators to contact
+* Increase sales of certain products
+
+### Developer Goals
+
+* Provide a clean design to highlight the business owners artwork
+* Implement simple navigation around the site for ease of use
+* Create a short 3 step process to purchasing a product
+* Create a form for users to contact the business owners
+* Create responsive galleries of the business owners artwork
+* Provide a secure way for users to pay for their products and provide a confirmation email
+
+### User Goals
+
+* Browse all of the Artists work available
+* Securely purchase an item if possible
+* Find relevant social media accounts
+
+### User Stories
+
+As a user I want
+
+* Have a clear Registration option to become a user of the site
+* Be able to Log In as a returning user
+* 
 
 
+### Technologies used
 
+* HTML
+* CSS3
+* JavaScript
+* jQuery
+* Python
+
+* [Django](https://www.djangoproject.com/)
+* [Bootstrap 4](https://getbootstrap.com/)
+
+* [Font Awesome](https://fontawesome.com/)
+* [Google Fonts](https://fonts.google.com/)
+
+* Pillow - Python package that allows images to be uploaded
+
+* [Heroku](https://dashboard.heroku.com/)
 
 
 ## Credits
