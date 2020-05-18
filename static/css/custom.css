@@ -1,10 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+
 form {
     width: 50%;
 }
 
 body {
     font-family: Arial;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 footer {
@@ -32,13 +36,30 @@ footer {
     background-color: #c67605;
 }
 
+.panel-default {
+    border-color: transparent;
+    padding: 0 10px;
+    position: relative;
+}
+
+.panel-body {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    width: 100%;
+}
+
 .product {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 450px;
     margin: 0 auto;
+    overflow: auto;
+}
+
+.product-description {
+    min-height: 40px;
 }
 
 caption p {
@@ -51,16 +72,86 @@ caption p {
     margin-top: 30px;
 }
 
-.panel-default {
-    border-color: transparent;
-    padding: 0 10px;
-}
+/*--Image Model--*/
 
-.panel-body {
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
-    border: 1px solid #ddd;
+    overflow: auto;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
-.product-description {
-    min-height: 40px;
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    max-height: 500px;
 }
+
+.modal-content {
+    -webkit-animation-name: zoom;
+    animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+}
+
+
+@keyframes zoom {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: 700;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    padding-top: 100px;
+}
+
+.close:focus,
+.close:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.myImg:hover {
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+
