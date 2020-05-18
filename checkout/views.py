@@ -32,26 +32,26 @@ def checkout(request):
                 product = get_object_or_404(Product, pk=id)
                 total += quantity * product.price
                 order_line_item = OrderLineItem(
-                    order=order,
-                    product=product,
-                    quantity=quantity
+                    order = order,
+                    product = product,
+                    quantity = quantity
                     )
                 order_line_item.save()
 
             try:
                 customer = stripe.Charge.create(
-                    amount=int(total * 100),
-                    currency="GBS",
-                    description=request.user.email,
-                    card=payment_form.cleaned_data['stripe_id'],
+                    amount = int(total * 100),
+                    currency = "EUR",
+                    description = request.user.email,
+                    card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
 
             if customer.paid: 
-                messages.error(request, 'You have successfully paid')
+                messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('products'))
+                return redirect(reverse('product'))
             else:
                 messages.error(request, "Unable to make payment")
         else:
