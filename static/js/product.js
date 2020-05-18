@@ -10,7 +10,7 @@ $(document).ready(function(){
     $(".myImg").click(function () {
         t.style.display = "block";
         var e = this.src;
-        c.attr("src", e);
+        c.attr("MEDIA_URL", e);
     }),
     (document.getElementsByClassName("close")[0].click = function () {
         t.style.display = "none";
