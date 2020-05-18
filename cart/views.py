@@ -1,11 +1,10 @@
-from django.shortcuts import render, reverse, redirect
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 
 def view_cart(request):
     """Renders everything in the cart"""
-    return render(request, 'cart.html')
-
+    return render(request, "cart.html")
 
 
 def add_to_cart(request, id):
@@ -24,12 +23,13 @@ def add_to_cart(request, id):
 
 def adjust_cart(request, id):
     """Adjust the quantity of a specified product by a specified amount"""
-    quantity = int(request.session.POST('quantity'))
+    print(request.POST)
+    quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
     if quantity > 0:
         cart[id] = quantity
-    else: 
+    else:
         cart.pop(id)
 
     request.session['cart'] = cart
