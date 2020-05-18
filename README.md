@@ -56,7 +56,36 @@ As a user I want
 
 * Have a clear Registration option to become a user of the site
 * Be able to Log In as a returning user
-* 
+* To know how many products are in my cart at all times
+* Change the size of my chosen product in my cart and the quantity of that product I want to buy
+* Find contact information about the Artist
+* Find the Artists social media accounts
+* Be able to view the site on all possible screen sizes
+* Once added a product to the cart, be able to navigate back to the shopping page easily
+
+### Design Choices
+
+1. Buttons
+
+2. Font
+
+3. Icons
+
+4. Forms
+
+5. Product Panels
+
+6. Footer
+
+7. Nav-bar
+
+
+### Wireframes
+
+### Features
+
+* Back to the top button on a large screen
+* Instagram plug in
 
 
 ### Technologies used
