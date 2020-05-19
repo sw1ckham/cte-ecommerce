@@ -16,64 +16,70 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'index' %}">CTE</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    {% if user.is_authenticated %}
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'product' %}">Shop</a></li>
-                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"> Log Out</i></a></li>
-                    {%  else %}
-                        <li><a href="{% url 'product' %}">Shop</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
-                    {% endif %}
-                        <li><a href="{% url 'view_cart' %}">
-                            <i class="fas fa-shopping-cart"></i> Cart
-                            {% if product_count > 0 %}
-                            <label class="badge badge-warning">{{ product_count }}</label>
-                            {% endif %}
-                        </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="page-container">
+        <div class="container" id="content-wrap">
+            <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{% url 'index' %}">CTE</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if user.is_authenticated %}iv class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="{% url 'canvas' %}">Canvas</a>
+                                        <a class="dropdown-item" href="{{% url 'paper' %}}">Paper</a>
+                                    </div>
+                                </div>
+abel class="badge badge-warning">{{ product_count }}</label>
+                                    {% endif %}
+                                </a></li>
+                        </ul>
+                    </div>
+                                <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Gallery
+                                        </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="{% url 'canvas' %}">Canvas</a>
+                                        <a class="dropdown-item" href="{% url 'paper' %}">Paper</a>
+                                    </div>
+                                </div>                                                                        </div>
+            </nav>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h1>{% block page_heading %}{% endblock %}</h1>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h1>{% block page_heading %}{% endblock %}</h1>
+                    </div>
+                </div>
+            </div>
+
+            {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <div class="container">
+                {% block content %}{% endblock %}
             </div>
         </div>
+
+        <footer id="footer">
+            <div class="container">
+                <p>All Art and Images belong to the Artist Cormac Thomas Eddery</p>
+            </div>
+        </footer>
+        
     </div>
-
-	{% if messages %}
-        <div>
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-        </div>
-	{% endif %}
-
-    <div class="container">
-	    {% block content %}{% endblock %}
-    </div>
-    <footer>
-        <div class="container">
-            <p>Made by Sophie Wickham</p>
-        </div>
-    </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
