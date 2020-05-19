@@ -20,6 +20,7 @@ from home import urls as urls_home
 from product import urls as urls_product
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
+from gallery import urls as urls_gallery
 from accounts.views import index
 from home.views import about
 from product.views import all_products
@@ -35,5 +36,6 @@ urlpatterns = [
     url(r'^checkout/', include(urls_checkout)),
     url(r'^product/', all_products, name="product"),
     url(r'^cart/', include(urls_cart)),
+    url(r'^gallery/', include(urls_gallery)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
