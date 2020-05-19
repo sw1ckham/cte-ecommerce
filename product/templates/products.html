@@ -21,8 +21,26 @@
                 <p class="product-description">{{ product.description }}</p>
 
                 <p>£{{ product.price }}</p>
-
-                <p class="size-options">{{ product.size }}</p>
+                
+                <label for="sel1">Select Size:</label>
+                <select id="size-options">
+                {% for size_choices in size %}
+                    {% if size_choices in size %}
+                        <option>{{ product.size }}</option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+                <!-- <div class="form-group">
+                    
+                    {% for size in size_choices %}
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    {% endfor %}
+                </div> -->
             
             <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
