@@ -31,27 +31,37 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            {% if user.is_authenticated %}iv class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="{% url 'canvas' %}">Canvas</a>
-                                        <a class="dropdown-item" href="{{% url 'paper' %}}">Paper</a>
-                                    </div>
-                                </div>
-abel class="badge badge-warning">{{ product_count }}</label>
-                                    {% endif %}
-                                </a></li>
-                        </ul>
-                    </div>
-                                <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if user.is_authenticated %}
+                        
+                        
+                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"> Log Out</i></a></li>
+                    {%  else %}
+                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
+                    {% endif %}
+                        <li><a href="{% url 'product' %}">Shop</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
-                                        </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="{% url 'canvas' %}">Canvas</a>
-                                        <a class="dropdown-item" href="{% url 'paper' %}">Paper</a>
-                                    </div>
-                                </div>                                                                        </div>
-            </nav>
-
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{% url 'canvas' %}">Canvas</a>
+                                <a class="dropdown-item" href="{% url 'paper' %}">Paper</a>
+                            </div>
+                        </div>  
+                        </li>
+                        <li><a href="{% url 'view_cart' %}">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12">
