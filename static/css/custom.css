@@ -4,18 +4,38 @@ html {
 
 #page-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 #content-wrap {
-  padding-bottom: 3.5rem;
+  padding-bottom: 9rem;
   width: 100%;
 }
+
+/* .toggle-description {
+    display: none;
+} */
 
 /*-- NavBar --*/
 
 .nav {
     padding: 15px;
+}
+
+.navbar-header .navbar-brand {
+    color: #fff;
+}
+
+.navbar-header {
+    padding: 15px;
+}
+
+#navbar ul li a {
+    color: #fff;
+}
+
+#main-navbar {
+    border-bottom: 1px solid #ededed;
 }
 
 .navbar-nav {
@@ -26,18 +46,32 @@ html {
     cursor: pointer;
 }
 
+.dropdown-menu li a:hover {
+    background-color: #000;
+}
+
+.navbar-inverse {
+    background-color: #000;
+}
+
+.dropdown-menu {
+    background-color: #000;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
 /*-- Homepage --*/
 
 .img-bg {
-  background-image: url('/media/images/front-page-images/front-page.jpg');
+  background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+  background-size: cover;
   background-size: 100% auto;
-  height: 1200px;
-  width: 100vw;
-  text-align: center;
-  background-position: top 100px;
-  background-repeat: no-repeat;
+  height: 800px;
+  width: 100%;
   padding: 0;
   margin: 0;
+  background-position: relative;
+  bottom: -100px;
 }
 
 /*-- Footer --*/
@@ -49,6 +83,7 @@ html {
 }
 
 footer {
+    height: 9rem;
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
@@ -57,7 +92,22 @@ footer {
 }
 
 form {
-    width: 50%;
+    vertical-align:middle;
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+.aligner-item {
+  width: 70%;
+}
+
+.control-label {
+    color: #fff;
 }
 
 body {
@@ -216,6 +266,12 @@ caption p {
 
 @media (min-width: 768px) {
     .nav {
+        padding: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-header {
         padding: 5px;
     }
 }
