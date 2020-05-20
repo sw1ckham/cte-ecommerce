@@ -14,7 +14,9 @@
                     <img class="modal-content" id="img01" alt="Larger version of original photo">
                 </div>
                 <div class="myImg product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}'"></div>
-                <i class="fas fa-plus toggle-button"></i>
+                <div class="toggle-show-button">
+                    <i class="fas fa-plus"></i>
+                </div>
                 <div class="toggle-description">
                         <h3>{{ product.name }}</h3>
 
@@ -38,9 +40,11 @@
                             <button class="btn btn-success" type="submit"> Add </button>
                         </div>
                     </form>
+                    <div class="toggle-hide-button">
+                        <span><i class="fas fa-angle-down"></i></span>
+                    </div>
                 </div>
             </div>
-
         </div>
         {% endfor %}
     </div>
