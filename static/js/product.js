@@ -1,9 +1,21 @@
 $(document).ready(function(){
-    $('.toggle-description').hide();
-
-    $(".toggle-button").click(function() {
-    $(this).next(".toggle-description").slideToggle("show");
+    
+    
+    $(".toggle-show-button").click(function() {
+        $(this).next(".toggle-description").toggleClass("toggle-description-show");
     });
+
+    $('.toggle-hide-button-show').click(function(){
+        $(this).next(".toggle-description-show").toggleClass("toggle-description");
+    });
+
+    // $('.toggle-hide-button').click(function(){
+    //     $(this).next(".toggle-description").hide();
+    // });
+
+    // $(".toggle-button-hide-show").click(function(){
+    //     $(this).next(".toggle-description-show").toggleClass("toggle-description");
+    // })
 
 
     var t = document.getElementById("myModal"),
