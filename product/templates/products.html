@@ -26,20 +26,21 @@
                         
                         <label for="sel1">Select Size:</label>
                         <select id="size-options">
-                        {% for size_choices in size %}
-                            {% if size_choices in size %}
-                                <option>{{ product.size }}</option>
-                            {% endif %}
+                        {% for size_choices in product.size %}
+                                <option>{{ size_choices }}</option>
                         {% endfor %}
                         </select>
+
                     <form method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
                         <div class="input-group">
                             <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                            <span class="input-group-btn"></span>
+                            <span class="input-group-btn">
                             <button class="btn btn-success" type="submit"> Add </button>
+                            </span>
                         </div>
                     </form>
+
                     <div class="toggle-hide-button">
                         <span><i class="fas fa-angle-down"></i></span>
                     </div>
