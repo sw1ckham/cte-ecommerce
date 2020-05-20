@@ -30,6 +30,9 @@ def adjust_cart(request, id):
 
     if quantity > 0:
         cart[id] = quantity
+        # size = request.POST.get('size_choices')
+        # cart = request.session.get('cart', {})
+        # request.session['cart']['size'] = size
     else:
         cart.pop(id)
 
