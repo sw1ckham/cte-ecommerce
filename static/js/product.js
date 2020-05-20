@@ -5,6 +5,7 @@ $(document).ready(function(){
     $(this).next(".toggle-description").slideToggle("show");
     });
 
+
     var t = document.getElementById("myModal"),
     c = ($(".myImg"), $("#img01"));
     $(".myImg").click(function () {
