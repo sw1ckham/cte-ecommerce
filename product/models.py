@@ -7,7 +7,7 @@ from multiselectfield import MultiSelectField
 class Product(models.Model):
     name = models.CharField(
         max_length=250, default="")
-    description = models.TextField()
+    description = models.TextField(max_length=200)
     size_choices = [
                     ('4x6', "4x6"),
                     ('5x7', '5x7'),
