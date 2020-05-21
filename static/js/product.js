@@ -5,17 +5,10 @@ $(document).ready(function(){
         $(this).next(".toggle-description").toggleClass("toggle-description-show");
     });
 
-    $('.toggle-hide-button-show').click(function(){
-        $(this).next(".toggle-description-show").toggleClass("toggle-description");
+    $('.toggle-hide-icon').click(function(){
+        $(this).next(".toggle-description-show").hide();
     });
 
-    // $('.toggle-hide-button').click(function(){
-    //     $(this).next(".toggle-description").hide();
-    // });
-
-    // $(".toggle-button-hide-show").click(function(){
-    //     $(this).next(".toggle-description-show").toggleClass("toggle-description");
-    // })
 
 
     var t = document.getElementById("myModal"),
