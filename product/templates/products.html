@@ -15,39 +15,38 @@
                 </div>
                 <div class="myImg product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}'"></div>
                 <div class="toggle-show-button">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus toggle-show-icon"></i>
                 </div>
                 <div class="toggle-description">
-                        <h3>{{ product.name }}</h3>
+                        <h3 class="product-title">{{ product.name }}</h3>
 
                         <p class="product-description">{{ product.description }}</p>
 
-                        <p>£{{ product.price }}</p>
+                        <p class="product-price">£{{ product.price }}</p>
                         
-                        <label for="sel1">Select Size:</label>
+                        <label class="select-size-label" for="sel1">Select Size:</label>
                         <select id="size-options">
                         {% for size_choices in product.size %}
-                                <option>{{ size_choices }}</option>
+                                <option class="size-option">{{ size_choices }}</option>
                         {% endfor %}
                         </select>
 
-                    <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    <form class="quantity-select-form" method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
                         <div class="input-group">
                             <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                             <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit"> Add </button>
+                            <button class="btn" type="submit"> Add </button>
                             </span>
                         </div>
                     </form>
-
-                    <div class="toggle-hide-button">
-                        <span><i class="fas fa-angle-down"></i></span>
-                    </div>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+    
 </div>
+
+
 {% endblock %}
