@@ -16,8 +16,8 @@
 </head>
 
 <body>
-    <div id="page-container">
-        <div id="content-wrap">
+    <!-- <div id="page-container"> -->
+        
         
             <nav id="main-navbar" class="nav navbar-nav navbar-inverse navbar-default navbar-expand-lg navbar-fixed-top">
                 <div class="container d-flex flex-grow-1">
@@ -82,7 +82,8 @@
                 </div>
             </nav>
        
-            <div class="content-bubble">
+        <div id="content-wrap">   
+
 
             {% if messages %}
                 <div>
@@ -94,14 +95,13 @@
 
             
                 {% block content %}{% endblock %}
-            </div>
+            
             
         </div>
 
         <footer id="footer">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12">
+                <div class="row justify-content-center no-gutters">
                         <div class="col-12 social">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
@@ -124,8 +124,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center no-gutters">
                         <div class="col-12 footer-text">
                             <p>All Art and Images belong to the Artist Cormac Thomas Eddery</p>
                         </div>
@@ -133,8 +132,8 @@
                 </div>
             </div>
         </footer>
-        
-    </div>
+    <!-- </div> -->
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
