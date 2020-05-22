@@ -112,3 +112,5 @@ As a user I want
 ### Code  
  1. Wanted to add more input fields when a User registers, the default Django User Model only allows 'Username' 'Password1' 'Password2'
  * [Solution](https://dev.to/coderasha/create-advanced-user-sign-up-view-in-django-step-by-step-k9m)
+ 2. Editing the Django error message so it pops up as a modal.
+ *[Solution](https://stackoverflow.com/questions/58863057/displaying-a-message-as-a-popup-alert-in-django)
