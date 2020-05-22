@@ -33,12 +33,41 @@ body {
     }
 }
 
-.login-form {
-    margin-top: 15%;
+.message-user {
+    color: #fff;
 }
 
+.notification{
+    position: absolute;
+    top: 10rem;
+    left: 1rem;
+    background: #000;
+    color: #16c32b;
+    font-size: 3rem;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+/*-- Log in and register forms --*/
+
 .register-form {
-    margin-top: 5%;
+    min-height: calc(100vh - 415px);
+}
+
+@media (min-width: 768px) {
+    .register-form {
+    min-height: calc(100vh - 349px);
+    }
+}
+
+.login-form {
+    min-height: calc(100vh - 270px);
+}
+
+@media (min-width: 768px) {
+    .login-form {
+    min-height: calc(100vh - 260px);
+    }
 }
 
 /*--Heading--*/
@@ -49,7 +78,15 @@ h2 {
 
 .page-headings {
     color: #fff;
-    padding-top: 
+    padding-top: 20px;
+}
+
+.block-divider {
+    border-top: 1px #16c32b solid;
+    width: 70%;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /*-- NavBar --*/
@@ -193,6 +230,7 @@ form {
 .aligner {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 @media(min-width: 768px) {
@@ -203,6 +241,8 @@ form {
 
 .aligner-item {
   width: 70%;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 .control-label {
