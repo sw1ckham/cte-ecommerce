@@ -29,14 +29,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{% url 'index' %}">CTEddery</a>      
+                        <a class="navbar-brand nav-anima" href="{% url 'index' %}">CTEddery</a>      
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             {% if user.is_authenticated %}
                                 <li><a href="{% url 'about' %}">About</a></li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle nav-anima" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
                                     </a>
                                     <ul class="dropdown-menu navbar-dropdown-heading" aria-labelledby="navbarDropdown">
@@ -44,20 +44,20 @@
                                         <li><a class="dropdown-item" href="{% url 'paper' %}">Paper</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{% url 'product' %}">Shop</a></li>
+                                <li><a class="nav-anima" href="{% url 'product' %}">Shop</a></li>
                                 <li>
-                                    <a href="{% url 'view_cart' %}">
+                                    <a class="nav-anima" href="{% url 'view_cart' %}">
                                         <i class="fas fa-shopping-cart"></i>
                                         {% if product_count > 0 %}
                                         <label class="badge badge-warning">{{ product_count }}</label>
                                         {% endif %}
                                     </a>
                                 </li>
-                                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                <li><a class="nav-anima" href="{% url 'logout' %}">Log Out</a></li>
                             {% else %}
-                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a class="nav-anima" href="{% url 'about' %}">About</a></li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-anima nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
                                     </a>
                                     <ul class="dropdown-menu navbar-dropdown-heading" aria-labelledby="navbarDropdown">
@@ -65,11 +65,11 @@
                                         <li><a class="dropdown-item" href="{% url 'paper' %}">Paper</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{% url 'product' %}">Shop</a></li>
-                                <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                                <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
+                                <li><a class="nav-anima" href="{% url 'product' %}">Shop</a></li>
+                                <li><a class="nav-anima" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                                <li><a class="nav-anima" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
                                 <li>
-                                    <a href="{% url 'view_cart' %}">
+                                    <a class="nav-anima" href="{% url 'view_cart' %}">
                                         <i class="fas fa-shopping-cart"></i>
                                         {% if product_count > 0 %}
                                         <label class="badge badge-warning">{{ product_count }}</label>
@@ -89,6 +89,9 @@
                     {% for message in messages %}
                         $(document).ready(function () {
                             $('.toast').toast('show');
+                            $('.close').click(function(){
+                                $('.toast').hide();
+                            })
                         });
                     {% endfor %}
                 </script>
