@@ -9,11 +9,12 @@
 <div class="container">
     <div class="col-12">
         <h1 class="page-headings">Log In</h1>
+        <hr class="block-divider">
     </div>
 </div>
 
-<div class="container login-form">
-    <div class="row aligner">
+<div class="container aligner login-form">
+    <div class="row justify-content-center aligner">
         <div class="col-12 aligner-item">
             <form method="POST">
                 {% csrf_token %} {{ login_form | as_bootstrap }}

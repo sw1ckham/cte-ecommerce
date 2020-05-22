@@ -11,14 +11,15 @@
 <div class="container">
     <div class="col-12">
         <h1 class="page-headings">Register</h1>
+        <hr class="block-divider">
         <p class="product-description">Register to purchase prints from my online shop. Soon to be setting up a newsletter to keep you updated 
         on upcoming gallery and collaboration events!</p>
     </div>
 </div>
 
-<div class="container">
-    <div class="row aligner">
-        <div class="col-12 aligner-item register-form">
+<div class="container register-form aligner">
+    <div class="row aligner justify-content-center">
+        <div class="col-12 aligner-item">
             <p class="control-label text-center">If you already have an account, you can <a href="{% url 'login' %}">Sign In</a></p>
 
             <form method="POST">
