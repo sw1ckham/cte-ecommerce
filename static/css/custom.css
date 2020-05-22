@@ -5,13 +5,19 @@ html {
 
 #content-wrap {
   width: 100%;
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 201px);
   margin: 0;
   padding: 0;
 }
 
+@media (min-width: 768px) {
+    #content-wrap {
+        min-height: calc(100vh - 191px)
+    }
+}
+
 body {
-    padding-top: 70px;
+    padding-top: 81px;
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: #130d0dc9;
     width: 100%;
@@ -21,21 +27,41 @@ body {
     padding-bottom: 0;
 }
 
+@media (min-width: 768px) {
+    body {
+        padding-top: 71px;
+    }
+}
+
+.login-form {
+    margin-top: 15%;
+}
+
+.register-form {
+    margin-top: 5%;
+}
+
 /*--Heading--*/
 
 h2 {
     color: #fff;
 }
 
+.page-headings {
+    color: #fff;
+    padding-top: 
+}
+
 /*-- NavBar --*/
 
-.nav {
+/* .nav {
     padding: 15px;
-}
+} */
 
 .navbar-header .navbar-brand {
     color: #fff;
     transition: all .5s ease-in-out;
+    
 }
 
 .navbar-header .navbar-brand:hover {
@@ -49,7 +75,7 @@ h2 {
 
 #navbar ul li a {
     color: #fff;
-    transition: all .5s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
 
 #navbar ul li a:hover {
@@ -68,6 +94,10 @@ h2 {
 
 #dropdownMenuButton {
     cursor: pointer;
+}
+
+.dropdown-item {
+    transform: none;
 }
 
 .dropdown-menu li a:hover {
@@ -89,12 +119,10 @@ h2 {
 .img-bg {
   background: url('/media/images/front-page-images/mobile-homepage.jpg') no-repeat center top;
   background-size: cover;
-  background-size: 100% auto;
   height: 800px;
   width: 100%;
   padding: 0;
   margin: 0;
-  background-position: relative;
   bottom: -100px;
 }
 
@@ -102,18 +130,51 @@ h2 {
     .img-bg {
         background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
         background-size: cover;
-        background-size: 100% auto;
-        height: 800px;
+        height: 659px;
         width: 100%;
         padding: 0;
         margin: 0;
-        background-position: relative;
+        bottom: -100px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .img-bg {
+        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background-size: cover;
+        height: 750px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        bottom: -100px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .img-bg {
+        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background-size: cover;
+        height: 900px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        bottom: -100px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .img-bg {
+        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background-size: cover;
+        height: 1650px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
         bottom: -100px;
     }
 }
 
 /*-- Footer --*/
-
 
 footer {
     height: 12rem;
@@ -131,9 +192,13 @@ form {
 
 .aligner {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 95vh;
+}
+
+@media(min-width: 768px) {
+    .aligner {
+        align-items: center;
+    }
 }
 
 .aligner-item {
@@ -157,7 +222,7 @@ i {
 .social ul li i {
     color: #fff;
     padding: 5px;
-    transition: all .5s ease-in-out;
+    transition: transform .5s ease-in-out;
 }
 
 .social {
@@ -205,6 +270,8 @@ i {
 
 .product-description {
     font-size: 2rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .product-price {
@@ -215,7 +282,7 @@ i {
 .btn {
     color: #000;
     background-color: #fff;
-    transition: all .3s ease-in-out;
+    transition: transform .3s ease-in-out;
     outline: none;
 }
 
