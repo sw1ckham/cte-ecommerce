@@ -78,7 +78,7 @@ h2 {
 
 .page-headings {
     color: #fff;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .block-divider {
@@ -217,6 +217,64 @@ h2 {
     }
 }
 
+/*-- About --*/
+
+.contact-info-wrapper {
+    padding-top: 100px;
+}
+
+.img-about img {
+    width: 80%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.img-about {
+    width: 100%;
+    margin-top: 10%;
+    margin-left: 15%;
+    display: none;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 1440px) {
+    .img-about {
+        margin-top: 10%;
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .img-about {
+        display: block;
+    }
+}
+
+/*--Maps--*/
+
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+}
+
+.map-wrapper {
+    padding-bottom: 20px;
+}
+
+@media (min-width: 768px){
+    #map {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px){
+    #map {
+        width: 100%;
+    }
+}
+
+
 /*-- Footer --*/
 
 footer {
@@ -318,6 +376,7 @@ i {
     font-size: 2rem;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .product-price {
@@ -339,11 +398,6 @@ i {
     outline: none;
 }
 
-#size-options {
-    color: #000;
-    border-radius: 4px;
-    font-size: 1.7rem;
-}
 
 .select-size-label {
     padding-top: 100px;
@@ -432,13 +486,58 @@ caption p {
 
 /*-- Cart --*/
 
+.panel-cart {
+    display:table;
+    margin-bottom: 0px;
+    border: none;
+    width: 100%;
+}
+
+.panel-body {
+  display: inline-block;
+}
+
+.panel-heading {
+  padding: 0px 15px;
+  display: table-cell;
+  width: 400px;
+  border: none;
+}
+
+.panel-heading:before, .panel-heading:after {
+  content: " ";
+  display: table;
+}
+
+.panel-info>.panel-heading {
+    color: transparent;
+    background-color: transparent;
+    border-color: none;
+}
+
 .cart-wrapper {
     position: absolute;
     left: 10px;
 }
 
+.total-wrapper {
+    position: fixed;
+    bottom: 125px;
+    right: 50px;
+}
+
 .edit-size-label {
     color: #fff;
+    font-size: 1.7rem; 
+    padding-right: 5px;
+}
+
+#size-options {
+    color: #000;
+    border-radius: 4px;
+    font-size: 1.7rem;
+    padding-left: 5px;
+    height: 34px;
 }
 
 /*--Image Model--*/
@@ -453,7 +552,6 @@ caption p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #000;
     background-color: rgba(0, 0, 0, 0.9);
 }
 
