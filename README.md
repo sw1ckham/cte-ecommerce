@@ -2,6 +2,8 @@
 
 CTE-Ecommerce
 
+<p>CTE-ecommerce is fully responsive </p>
+
 ## Table of contents
 
 [**Project Goals**](#project-goals)
@@ -144,6 +146,10 @@ Carried out by myself, and two other third parties.
 ## Bugs found during Testing
 
 ## Bugs found during developement
+
+1. No Quantity auto fill
+* [Solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number) If you were to add a product to the cart without specifying a quantity of that product. You would get a 404 error. This is because there is no 
+default value rendered. I added value="1" to my input html which stopped the problem. 
 
 ## Continous Testing
 
