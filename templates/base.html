@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% include 'message.html' %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,26 +91,14 @@
                 </div>
             </nav>
        
-        <div id="content-wrap">   
+            <div id="content-wrap">   
 
-        {% if messages %}
-                <script>
-                    {% for message in messages %}
-                        $(document).ready(function () {
-                            $('.toast').toast('show');
-                            $('.close').click(function(){
-                                $('.toast').hide();
-                            })
-                        });
-                    {% endfor %}
-                </script>
-        {% endif %}   
-
+            {% include 'message.html' %}
             
-                {% block content %}{% endblock %}
-            
-            
-        </div>
+                    {% block content %}{% endblock %}
+                
+                
+            </div>
 
         <footer id="footer">
             <div class="container">
@@ -145,13 +133,24 @@
                 </div>
             </div>
         </footer>
-    <!-- </div> -->
 
+<!-- google maps api script -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxmHymtoJ-lgW39kFxnS5WnKqA0BehWJM&callback=initMap" type="text/javascript" async defer></script> 
+<!-- Core jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap core javascript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Custome scripts for all pages-->
 <script type="text/javascript" src="{% static 'js/product.js' %}"></script>
+<!-- Code taken from https://www.youtube.com/watch?v=VIx3HD2gRWQ to remove alert messages after 2 seconds -->
+<script>
+    setTimeout(function(){
+        if ($('#msg').length > 0) {
+            $('#msg').remove();
+        }
+    }, 2000)
+</script>
     {% block head_js %}
     {% endblock head_js %}
 </body>
