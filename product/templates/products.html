@@ -18,11 +18,11 @@
 
         <div class="col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
-                <div id="myModal" class="modal">
+                <div id="myModal" class="modal" data-toggle="modal" data-target="#myModal{{product.image.pk}} {{forloop.counter0}}">
                     <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
                     <img class="modal-content" id="img01" alt="Larger version of original photo">
                 </div>
-                <div class="myImg product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}'"></div>
+                <div class="myImg product" style="background-image: url('{{ MEDIA_URL }}{{ product.imag }}')"></div>
                 <div class="toggle-show-button">
                     <i class="fas fa-plus toggle-show-icon"></i>
                 </div>
