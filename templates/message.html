@@ -1,17 +1,12 @@
-<!--Code taken from Stack overflow solutuion https://stackoverflow.com/questions/58863057/displaying-a-message-as-a-popup-alert-in-django -->
 
-{% for message in messages %}
-  <div class="toast notification bg-{% if message.tags == 'error' %}danger{% else %}{{message.tags}}{% endif %}" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
-        <div class="toast-header">
-            <strong class="mr-auto">
-                {{message.tags|capfirst}}
-            </strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+
+<!--Code taken from https://www.youtube.com/watch?v=VIx3HD2gRWQ -->
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+            {{ message }}
         </div>
-        <div class="toast-body">
-        {{message|safe}}
-        </div>
-  </div>
-{% endfor %}
+    {% endfor %}
+{% endif %}
+
