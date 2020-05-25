@@ -1,5 +1,10 @@
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 
@@ -22,9 +27,11 @@ body {
     background-color: #130d0dc9;
     width: 100%;
     margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    height: 100%;
+    overflow-x: hidden; 
 }
 
 @media (min-width: 768px) {
@@ -33,19 +40,14 @@ body {
     }
 }
 
-.message-user {
-    color: #fff;
+.alert {
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
-.notification{
-    position: absolute;
-    top: 10rem;
-    left: 1rem;
-    background: #000;
-    color: #16c32b;
-    font-size: 3rem;
-    border-radius: 4px;
-    padding: 2px;
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /*-- Log in and register forms --*/
@@ -89,11 +91,9 @@ h2 {
     margin-bottom: 5px;
 }
 
+
 /*-- NavBar --*/
 
-/* .nav {
-    padding: 15px;
-} */
 
 .navbar-header .navbar-brand {
     color: #fff;
@@ -379,6 +379,14 @@ i {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.product-description a {
+    color: #0089ff;
+}
+
+.control-label a {
+    color: #0089ff;
+}
+
 .product-price {
     font-size: 1.5rem;
     color: #fff;
@@ -410,7 +418,6 @@ i {
 
 .quantity-select-form {
     padding-top: 10px;
-    width: 70%;
 }
 
 .panel-default {
@@ -474,32 +481,150 @@ i {
     transition: all .4s ease;
 }
 
-caption p {
-    word-wrap: break-word;
+.caption {
+    width: 100%;
 }
 
 .row.row-flex {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    justify-content: center;
+}
+
+@media (min-width: 768px){
+    .row.row-flex {
+        justify-content: start;
+    }
+}
+
+/*-- Checkout --*/
+
+.payment-forms {
+    margin-top: 50px;
+}
+
+.checkout-title {
+    font-size: 3rem;
+    color: #fff;
+}
+
+
+.total-checkout-wrapper {
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.checkout-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.panel-checkout {
+    display: table-cell;
+    margin-bottom: 10px;
+    border: 1px solid #cf89ff;
+    border-radius: 4px;
+    padding: 5px;
+    position: relative;
+    background-color: #c159de7d;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.product-checkout {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+
+.product-title-checkout {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.product-description-checkout {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #fff;
+}
+
+.panel-body-checkout {
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    text-align: start;
+}
+
+.panel-heading-checkout {
+  display: inline-block;
+  width: 200px;
+  border: none;
+}
+
+legend {
+    border-bottom: 1px solid #16c32b;
 }
 
 /*-- Cart --*/
 
+.fixed {
+    position: fixed;
+    bottom: 0px;
+}
+
 .panel-cart {
-    display:table;
-    margin-bottom: 0px;
-    border: none;
+    display: table-cell;
+    margin-bottom: 10px;
+    border: 1px solid #cf89ff;
+    border-radius: 4px;
+    padding: 5px;
+    position: relative;
+    background-color: #c159de7d;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.product-cart {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
     width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+
+.panel-body-cart {
+    display: inline-block;
+    border: none;
+    text-align: start;
+    padding: 5px;
 }
 
 .panel-body {
   display: inline-block;
+  height: 100%;
 }
+
+.panel-heading-cart {
+  display: inline-block;
+  width: 200px;
+  border: none;
+}
+
 
 .panel-heading {
   padding: 0px 15px;
-  display: table-cell;
+  display: inline-block;
   width: 400px;
   border: none;
 }
@@ -513,6 +638,7 @@ caption p {
     color: transparent;
     background-color: transparent;
     border-color: none;
+    border: none;
 }
 
 .cart-wrapper {
@@ -521,9 +647,12 @@ caption p {
 }
 
 .total-wrapper {
-    position: fixed;
-    bottom: 125px;
-    right: 50px;
+    border: 1px solid #cf89ff;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #c159de7d;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .edit-size-label {
@@ -635,4 +764,10 @@ caption p {
 }
 
 
+/*-- Forms --*/
+
+.form-group {
+    padding: 5px;
+    width: 100%;
+}
 
