@@ -17,45 +17,45 @@
     
         {% for item in cart_items %}
         
-        <div class="col-12 panel-cart panel-info">
-            <div class="panel-heading">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+        <div class="col-12 col-sm-6 col-md-4 panel-cart">
+            <div class="panel-heading-cart">
+                <div class="product-cart" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
             </div>
-            <div class="panel-body">
+            <div class="panel-body-cart">
                 <div class="caption">
-                    <h3 class="product-title">{{ item.product.name }}</h3>
+                    <h3 class="product-title-checkout">{{ item.product.name }}</h3>
                     <p class="product-description">{{ item.product.description }}</p>
-                    <p class="product-price">£{{ item.product.price }}</p>
-                    <p>
+                        <p class="product-price">£{{ item.product.price }}</p>
+                        <p>
 
-                        <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Qty</div>
-                                    <input name="quantity" type="number" value="{{item.quantity}}" min="0" max="999" class="form-control">
-                                    <div class="input-group-addon">{{item.quantity}}</div>
+                            <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">Qty</div>
+                                        <input name="quantity" type="number" value="{{item.quantity}}" min="0" max="999" class="form-control">
+                                        <div class="input-group-addon">{{item.quantity}}</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                        </form>
-                        
-                        <form class="form-inline quantity-select-form" method="post" action="{% url 'adjust_cart' item.id %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label class="edit-size-label" for="size-options">Size:</label>
-                                        <select id="size-options" name="size-options">
-                                            {% for size_choices in item.product.size %}
-                                                    <option class="size-option">{{ size_choices }}</option>
-                                            {% endfor %}
-                                        </select>                               
+                                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                            </form>
+                            
+                            <form class="form-inline quantity-select-form" method="post" action="{% url 'adjust_cart' item.id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label class="edit-size-label" for="size-options">Size:</label>
+                                            <select id="size-options" name="size-options">
+                                                {% for size_choices in item.product.size %}
+                                                        <option class="size-option">{{ size_choices }}</option>
+                                                {% endfor %}
+                                            </select>                               
+                                    </div>
                                 </div>
-                            </div>
-                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                        </form>
-                    </p>
+                                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                            </form>
+                        </p>
                 </div>
             </div>
         </div>
@@ -64,28 +64,14 @@
 </div>
     
 
-    <div class="container">   
-        <div class="row align-items-end justify-content-end total-wrapper">
-            <div class="col-12">
-                <p class="product-description">Total</p>
-                <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
-                <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
-            </div>
+<div class="container">   
+    <div class="row">
+        <div class="col-12 total-wrapper">
+            <p class="product-description">Total</p>
+            <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
+            <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
         </div>
-    </div>        
-
-
-
-        {% if cart_items.total == 0 %}
-    <div class="container">      
-        <div class="row">
-            <div class="col-12">
-                <h2 class="page-heading">There are no items in your cart</h2>
-            </div>
-        </div>
-    </div>        
-        {% endif %}
-
-
+    </div>
+</div>        
 
 {% endblock %}
