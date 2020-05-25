@@ -478,7 +478,6 @@ i {
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 10px;
-    transition: all .4s ease;
 }
 
 .caption {
@@ -513,6 +512,7 @@ i {
 .total-checkout-wrapper {
     justify-content: center;
     padding-left: 10px;
+
 }
 
 .checkout-row {
@@ -653,6 +653,7 @@ legend {
     background-color: #c159de7d;
     display: inline-block;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .edit-size-label {
