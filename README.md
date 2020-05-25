@@ -89,6 +89,10 @@ the art itself and keep the site clean and uncluttered.
 6. Footer & Navbar
 * Dark backgrounds and white text, keeping to the website theme I chose a light green hover transition on the social icons. 
 
+7. Background images as front page
+* Due to the owner of the sites request, the desktop and mobile homepage will be a digital piece of art work made by the owner himself. He wants to keep 
+the initial view very simple and just a piece of his work.
+
 ### Wireframes
 
 ### Features
@@ -151,6 +155,9 @@ Carried out by myself, and two other third parties.
 * [Solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number) If you were to add a product to the cart without specifying a quantity of that product. You would get a 404 error. This is because there is no 
 default value rendered. I added value="1" to my input html which stopped the problem. 
 
+2. White space coming up on the right, as a margin around my body.
+* [Solution](https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend)
+
 ## Continous Testing
 
 ### Deployment 
@@ -165,8 +172,8 @@ default value rendered. I added value="1" to my input html which stopped the pro
 ### Code  
  1. Wanted to add more input fields when a User registers, the default Django User Model only allows 'Username' 'Password1' 'Password2'
  * [Solution](https://dev.to/coderasha/create-advanced-user-sign-up-view-in-django-step-by-step-k9m)
- 2. Editing the Django error message so it pops up as a modal.
- *[Solution](https://stackoverflow.com/questions/58863057/displaying-a-message-as-a-popup-alert-in-django)
+ 2. Editing the Django error message so it pops up as an alert and then disappears. 
+ *[Solution](https://www.youtube.com/watch?v=VIx3HD2gRWQ)
 
 ## Credits
 
