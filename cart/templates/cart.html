@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="col-12">
-        <h1 class="page-headings">Your collection</h1>
+        <h1 class="page-headings">Your Cart</h1>
         <hr class="block-divider">
         <p class="product-description">All orders will be dispatched within 3-5 working days and will be sent hand packaged, 1st class, through the Royal Mail</p>
     </div>
@@ -60,6 +60,17 @@
             </div>
         </div>
         {% endfor %}
+        
+        {% if cart_items.total == 0 %}
+                <div class="container">   
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <p class="product-title">There are no items in your cart!</p>
+                        </div>
+                    </div>
+                </div>  
+        {% endif %}
+
         <div class="col-12 col-sm-6 text-center total-wrapper">
             <p class="product-description">Total</p>
             <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
@@ -67,25 +78,5 @@
         </div>
     </div>
 </div>
-
-
-    
-
-
-      
-
-
-        {% for item in cart_items %}
-            {% if cart_items.total == 0 %}
-
-<div class="container">   
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <p class="product-title">There are no items in your cart!</p>
-        </div>
-    </div>
-</div>  
-            {% endif %}
-        {% endfor %}
 
 {% endblock %}
