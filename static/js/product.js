@@ -9,38 +9,24 @@ $(document).ready(function(){
         $(this).next(".toggle-description-show").hide();
     });
 
-
-
-    var t = document.getElementById("myModal"),
-    c = ($(".myImg"), $("#img01"));
-    $(".myImg").click(function () {
-        t.style.display = "block";
-        var e = this.src;
-        c.attr("MEDIA_URL", e);
-    }),
-    (document.getElementsByClassName("close")[0].click = function () {
-        t.style.display = "none";
-    });
-
-
-    // var onResize = function() {
-// apply dynamic padding at the top of the body according to the fixed navbar height
-    // $("body").css("padding-top", $(".navbar-fixed-top").height());
-    // };
-// attach the function to the window resize event
-    // $(window).resize(onResize);
-// call it also when the page is ready after load or reload
-    // $(function() {
-    //     onResize();
+    // $('#myModal').on('shown.bs.modal', function () {
+    // $('#myInput').trigger('focus')
     // });
 
-    // $(window).resize(function () { 
-    // $('body').css('padding-top', parseInt($('#main-navbar').css("height"))+10);
+    // console.log('load')
+    // var t = document.getElementById("myModal"),
+    // c = ($(".myImg"), $("#img01"));
+    // $(".myImg").click(function () {
+    //     console.log(this);
+    //     t.style.display = "block";
+    //     var e = this.src;
+    //     console.log(this.src);
+    //     c.attr("MEDIA_URL", e);
+        
+    // }),
+
+    // (document.getElementsByClassName("close")[0].click = function () {
+    //     t.style.display = "none";
     // });
 
-    // $(window).load(function () { 
-    // $('body').css('padding-top', parseInt($('#main-navbar').css("height"))+10);         
-    // }); 
-
-
-})
+});
