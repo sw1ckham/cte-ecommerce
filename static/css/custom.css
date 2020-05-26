@@ -411,6 +411,11 @@ i {
 
 /*--Product--*/
 
+.myImg {
+    width: 100%;
+    height: auto; 
+}
+
 .product-title {
     font-size: 4rem;
     color: #fff;
@@ -589,6 +594,8 @@ i {
     background-color: #c159de7d;
     vertical-align: middle;
     text-align: center;
+    width: 250px;
+    margin-right: 5px;
 }
 
 .product-checkout {
@@ -616,10 +623,10 @@ i {
 }
 
 .panel-body-checkout {
-    display: inline-block;
     border: none;
     padding: 5px;
     text-align: start;
+    float: left;
 }
 
 .panel-heading-checkout {
@@ -644,6 +651,7 @@ legend {
     background-color: #c159de7d;
     vertical-align: middle;
     text-align: center;
+    margin-right: 5px;
 }
 
 .product-cart {
@@ -658,10 +666,11 @@ legend {
 
 
 .panel-body-cart {
-    display: inline-block;
     border: none;
     text-align: start;
     padding: 5px;
+    float: left;
+    width: 100%;
 }
 
 .panel-heading-cart {
@@ -682,11 +691,24 @@ legend {
     background-color: #c159de7d;
     display: inline-block;
     margin-bottom: 10px;
-    position: fixed;
-    top: 50%;
-    right: 10px;
     width: 200px;
     height: 200px;
+}
+
+@media (min-width: 768px) {
+    .total-wrapper {
+        position: fixed;
+        top: 61%;
+        right: 50px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .total-wrapper {
+        position: fixed;
+        top: 65%;
+        right: 50px;
+    }
 }
 
 
@@ -700,6 +722,15 @@ legend {
     position: absolute;
 }
 
+button.close {
+    font-size: 4rem;
+    color: #fff;
+    opacity: 1;
+}
+
+button.close:hover {
+    color: #16c32b;
+}
 
 /* 
 .modal {
@@ -762,15 +793,6 @@ legend {
     text-decoration: none;
     cursor: pointer;
 } */
-
-.myImg {
-    /* border-radius: 5px;
-    background-position: contain;
-    width: 80vw;
-    height: 80vh; */
-}
-
-
 
 @media only screen and (max-width: 700px) {
     .modal-content {
