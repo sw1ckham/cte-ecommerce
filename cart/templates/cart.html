@@ -37,8 +37,8 @@
                                         <input name="quantity" type="number" value="{{item.quantity}}" min="0" max="999" class="form-control">
                                         <div class="input-group-addon">{{item.quantity}}</div>
                                     </div>
+                                 <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
                                 </div>
-                                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
                             </form>
                             
                             <form class="form-inline quantity-select-form" method="post" action="{% url 'adjust_cart' item.id %}">
@@ -52,8 +52,8 @@
                                                 {% endfor %}
                                             </select>                               
                                     </div>
-                                </div>
                                 <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                </div>
                             </form>
                         </p>
                 </div>
