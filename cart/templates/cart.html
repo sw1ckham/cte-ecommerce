@@ -59,18 +59,16 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-        
-        {% if cart_items.total == 0 %}
+        {% empty %}
                 <div class="container">   
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <div class="col-12">
                             <p class="product-title">There are no items in your cart!</p>
                         </div>
                     </div>
                 </div>  
-        {% endif %}
-
+        {% endfor %}
+        
         <div class="col-12 col-sm-6 text-center total-wrapper">
             <p class="product-description">Total</p>
             <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
