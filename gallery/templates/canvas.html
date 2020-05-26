@@ -20,11 +20,24 @@
 
         <div class="col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
-                <div id="myModal" class="modal">
-                    <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-                    <img class="modal-content" id="img01" alt="Larger version of original photo">
+            <!--Code for modal came from https://getbootstrap.com/docs/4.0/components/modal/#large-modal-->
+                <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog .modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <img class="myImg" src="{{ MEDIA_URL }}{{ art.image }}" alt="">
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <div class="product">
+                    <img data-toggle="modal" data-target="#myModal{{ forloop.counter }}" class="myImg img-responsive" src="{{ MEDIA_URL }}{{ art.image }}" alt="">
                 </div>
-                <div class="myImg product" style="background-image: url('{{ MEDIA_URL }}{{ art.image }}'"></div>
+
                 <div class="toggle-show-button">
                     <i class="fas fa-plus"></i>
                 </div>
