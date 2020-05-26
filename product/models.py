@@ -24,7 +24,7 @@ class Product(models.Model):
     ]
     size = MultiSelectField(
         choices=size_choices)
-    image = ResizedImageField(size=[1000, 1000], quality=75, upload_to='images')
+    image = ResizedImageField(size=[1000, 1000], quality=90, upload_to='images')
     price = models.DecimalField(
         max_digits=6, decimal_places=2)
 
