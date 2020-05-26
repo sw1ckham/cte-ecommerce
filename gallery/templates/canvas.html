@@ -22,12 +22,10 @@
             <div class="panel-body">
             <!--Code for modal came from https://getbootstrap.com/docs/4.0/components/modal/#large-modal-->
                 <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog .modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
                             <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <img class="myImg" src="{{ MEDIA_URL }}{{ art.image }}" alt="">
                             </div>
                         </div><!-- /.modal-content -->
