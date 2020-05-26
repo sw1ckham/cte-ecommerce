@@ -1,4 +1,5 @@
 from django.db import models
+from django_resized import ResizedImageField
 
 # Create your models here.
 
@@ -10,7 +11,7 @@ class Art(models.Model):
     name = models.CharField(
         max_length=20)
     description = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='images')
+    image = ResizedImageField(size=[1000, 1000], quality=75, upload_to='images')
     catergorie = models.CharField(max_length=10, choices=CAT_CHOICES, default='canvas')
 
     def __str__(self):

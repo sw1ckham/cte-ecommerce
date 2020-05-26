@@ -1,5 +1,6 @@
 from django.db import models
 from multiselectfield import MultiSelectField
+from django_resized import ResizedImageField
 
 
 # Create your models here.
@@ -23,7 +24,7 @@ class Product(models.Model):
     ]
     size = MultiSelectField(
         choices=size_choices)
-    image = models.ImageField(upload_to='images')
+    image = ResizedImageField(size=[1000, 1000], quality=75, upload_to='images')
     price = models.DecimalField(
         max_digits=6, decimal_places=2)
 
