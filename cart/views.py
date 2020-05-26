@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect, reverse
 from product.views import all_products
+from django.contrib import auth, messages
 
 # Create your views here.
 
 def view_cart(request):
     """Renders everything in the cart"""
+    # cartcontent = request.session.get('cart' , {})
+    # if not cartcontent:
+    #     messages.warning(request, 'There are no items in your cart')
+    #     return render(request, "cart.html")
+    # else:
     return render(request, "cart.html")
 
 
