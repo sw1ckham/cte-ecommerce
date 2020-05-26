@@ -68,6 +68,10 @@ body {
     bottom: 0px;
 }
 
+.container {
+    padding-left: 0;
+}
+
 /*-- Log in and register forms --*/
 
 .register-form {
@@ -698,18 +702,18 @@ legend {
 @media (min-width: 768px) {
     .total-wrapper {
         position: fixed;
-        top: 61%;
+        bottom: 125px;
         right: 50px;
     }
 }
-
+/* 
 @media (min-width: 1440px) {
     .total-wrapper {
         position: fixed;
         top: 65%;
         right: 50px;
     }
-}
+} */
 
 
 /*--Image Modal--*/
