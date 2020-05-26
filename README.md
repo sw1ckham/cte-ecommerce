@@ -173,7 +173,9 @@ default value rendered. I added value="1" to my input html which stopped the pro
  1. Wanted to add more input fields when a User registers, the default Django User Model only allows 'Username' 'Password1' 'Password2'
  * [Solution](https://dev.to/coderasha/create-advanced-user-sign-up-view-in-django-step-by-step-k9m)
  2. Editing the Django error message so it pops up as an alert and then disappears. 
- *[Solution](https://www.youtube.com/watch?v=VIx3HD2gRWQ)
+ * [Solution](https://www.youtube.com/watch?v=VIx3HD2gRWQ)
+ 3. Got code for modals off bootstrap site
+ * [Solution](https://getbootstrap.com/docs/4.0/components/modal/#large-modal)
 
 ## Credits
 
