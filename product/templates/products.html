@@ -50,12 +50,12 @@
 
                         <p class="product-description">{{ product.catergorie }}</p>
                         
-                        <label class="select-size-label" for="sel1">Select Size:</label>
-                        <select id="size-options">
+                        <!-- <label class="select-size-label" for="sel1">Select Size:</label>
+                        <select id="size-options" name="size_options">
                         {% for size_choices in product.size %}
                                 <option class="size-option">{{ size_choices }}</option>
                         {% endfor %}
-                        </select>
+                        </select> -->
 
                     <form class="quantity-select-form" method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
