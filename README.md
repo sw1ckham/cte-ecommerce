@@ -180,6 +180,8 @@ default value rendered. I added value="1" to my input html which stopped the pro
  * [Solution](https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap)
  5. Horizontally center modal images
  * [Solution](https://stackoverflow.com/questions/37950121/how-can-i-put-bootstrap-modal-in-horizontally-center)
+ 6. How to render content over a background image
+ * [Solution](https://css-tricks.com/text-blocks-over-image/)
 
 ## Credits
 
