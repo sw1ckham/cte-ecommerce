@@ -25,6 +25,11 @@ class Product(models.Model):
     size = MultiSelectField(
         choices=size_choices)
     image = ResizedImageField(size=[800, 600], quality=90, upload_to='images')
+    CAT_CHOICES = [
+        ('paper', 'Paper'),
+        ('canvas', 'Canvas')
+    ]
+    catergorie = models.CharField(max_length=10, choices=CAT_CHOICES, default='canvas')
     price = models.DecimalField(
         max_digits=6, decimal_places=2)
 
