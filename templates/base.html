@@ -38,12 +38,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand nav-anima" href="{% url 'index' %}">CTEddery</a>      
+                      <a class="navbar-brand nav-anima" {% if request.resolver_match.url_name == 'index' %}id="active-navlink"{% endif %} href="{% url 'index' %}">CTEddery</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             {% if user.is_authenticated %}
-                                <li><a class="nav-anima" href="{% url 'about' %}">About</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'about' %}id="active-navlink"{% endif %} href="{% url 'about' %}">About</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle nav-anima" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
@@ -53,18 +53,18 @@
                                         <li><a class="dropdown-item" href="{% url 'paper' %}">Paper</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="nav-anima" href="{% url 'product' %}">Shop</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'product' %}id="active-navlink"{% endif %} href="{% url 'product' %}">Shop</a></li>
                                 <li>
-                                    <a class="nav-anima" href="{% url 'view_cart' %}">
+                                    <a class="nav-anima" {% if request.resolver_match.url_name == 'view_cart' %}id="active-navlink"{% endif %} href="{% url 'view_cart' %}">
                                         <i class="fas fa-shopping-cart"></i>
                                         {% if product_count > 0 %}
                                         <label class="badge badge-warning">{{ product_count }}</label>
                                         {% endif %}
                                     </a>
                                 </li>
-                                <li><a class="nav-anima" href="{% url 'logout' %}">Log Out</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'logout' %}id="active-navlink"{% endif %} href="{% url 'logout' %}">Log Out</a></li>
                             {% else %}
-                                <li><a class="nav-anima" href="{% url 'about' %}">About</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'about' %}id="active-navlink"{% endif %} href="{% url 'about' %}">About</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-anima nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
@@ -74,11 +74,11 @@
                                         <li><a class="dropdown-item" href="{% url 'paper' %}">Paper</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="nav-anima" href="{% url 'product' %}">Shop</a></li>
-                                <li><a class="nav-anima" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                                <li><a class="nav-anima" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'product' %}id="active-navlink"{% endif %}href="{% url 'product' %}">Shop</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'register' %}id="active-navlink"{% endif %}href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                                <li><a class="nav-anima" {% if request.resolver_match.url_name == 'login' %}id="active-navlink"{% endif %} href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
                                 <li>
-                                    <a class="nav-anima" href="{% url 'view_cart' %}">
+                                    <a class="nav-anima" {% if request.resolver_match.url_name == 'view_cart' %}id="active-navlink"{% endif %} href="{% url 'view_cart' %}">
                                         <i class="fas fa-shopping-cart"></i>
                                         {% if product_count > 0 %}
                                         <label class="badge badge-warning">{{ product_count }}</label>
@@ -143,6 +143,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Custome scripts for all pages-->
 <script type="text/javascript" src="{% static 'js/product.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/scroll.js' %}"></script>
 <!-- Code taken from https://www.youtube.com/watch?v=VIx3HD2gRWQ to remove alert messages after 2 seconds -->
 <script>
     setTimeout(function(){
