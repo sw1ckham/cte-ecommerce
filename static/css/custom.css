@@ -68,9 +68,6 @@ body {
     bottom: 0px;
 }
 
-.container {
-    padding-left: 0;
-}
 
 /*-- Log in and register forms --*/
 
@@ -215,7 +212,7 @@ h2 {
 /*-- Homepage --*/
 
 .img-bg {
-  background: url('media/images/mobile-homepage.jpg') no-repeat center top;
+  background: url('{{ MEDIA_URL }}images/mobile-homepage.jpg') no-repeat center top;
   background-size: cover;
   height: 800px;
   width: 100%;
@@ -223,6 +220,23 @@ h2 {
   margin: 0;
   bottom: -100px;
 }
+
+.img-bg-success {
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  bottom: -100px;
+  z-index: -1;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 
 @media (min-width: 768px) {
     .img-bg {
@@ -833,3 +847,31 @@ button.close:hover {
         color: #fff;
     }
 
+    /*-- Success Page --*/
+
+    #backtohome {
+        font-size: 3rem;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #backtohome:hover {
+        color: #16c32b;
+        text-decoration: none;
+    }
+
+    #backHomeIcon {
+        font-size: 3rem;
+        color: #fff;
+    }
+
+    .success-content {
+        position: absolute;
+        top: 50px; 
+        left: 0; 
+        width: 100%;
+    }
+
+    #backHomeIcon {
+        padding-right: 10px;
+    }
