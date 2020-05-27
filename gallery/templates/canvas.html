@@ -24,8 +24,11 @@
                 <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
-                            <div class="modal-body">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ art.name }}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
                                 <img class="myImg" src="{{ MEDIA_URL }}{{ art.image }}" alt="">
                             </div>
                         </div><!-- /.modal-content -->
@@ -48,5 +51,6 @@
         </div>
         {% endfor %}
     </div>
+    <button type="button" id="BackTop" class="toTop-arrow" style="z-index: 100;"></button>
 </div>
 {% endblock %}
