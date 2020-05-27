@@ -2,6 +2,8 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
+{% block page_title %}Cart{% endblock %}
+
 {% block content %}
 
 <div class="container">
@@ -70,9 +72,10 @@
         {% endfor %}
         
         <div class="col-12 col-sm-6 text-center total-wrapper">
-            <p class="product-description">Total</p>
-            <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
-            <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
+            <label class="product-description" for="total">Total:<p class="product-price" name="total"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p></label>
+            {% if cart_items %}
+                <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
+            {% endif %}
         </div>
     </div>
 </div>
