@@ -49,9 +49,11 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid: 
-                messages.success(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('product'))
+                return render(request, 'success.html')
+                # messages.success(request, "You have successfully paid")
+                # request.session['cart'] = {}
+                # return redirect(reverse('product'))
             else:
                 messages.error(request, "Unable to make payment")
         else:
@@ -62,3 +64,8 @@ def checkout(request):
         order_form = OrderForm()
 
     return render(request, 'checkout.html', {"order_form": order_form, 'payment_form': payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+
+
+@login_required
+def success(request):
+    return render(request, 'success.html')
