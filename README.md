@@ -176,6 +176,10 @@ default value rendered. I added value="1" to my input html which stopped the pro
  * [Solution](https://www.youtube.com/watch?v=VIx3HD2gRWQ)
  3. Got code for modals off bootstrap site
  * [Solution](https://getbootstrap.com/docs/4.0/components/modal/#large-modal)
+ 4. Code from Stackoverflow to create a active nav link option
+ * [Solution](https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap)
+ 5. Horizontally center modal images
+ * [Solution](https://stackoverflow.com/questions/37950121/how-can-i-put-bootstrap-modal-in-horizontally-center)
 
 ## Credits
 
