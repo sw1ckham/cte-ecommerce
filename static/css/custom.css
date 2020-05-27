@@ -75,9 +75,29 @@ body {
     min-height: calc(100vh - 415px);
 }
 
+.register {
+    width: 95%;
+}
+
+.login {
+    width: 95%;
+}
+
 @media (min-width: 768px) {
     .register-form {
     min-height: calc(100vh - 349px);
+    }
+}
+
+@media (min-width: 1140px) {
+    .register {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1140px) {
+    .login {
+        width: 70%;
     }
 }
 
@@ -223,20 +243,13 @@ h2 {
 
 .img-bg-success {
   background-size: cover;
-  height: 800px;
+  height: auto;
   width: 100%;
   padding: 0;
   margin: 0;
   bottom: -100px;
   z-index: -1;
 }
-
-.image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
 
 @media (min-width: 768px) {
     .img-bg {
@@ -350,7 +363,7 @@ footer {
     height: 12rem;
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
-    background-color: #000000a8;
+    background-color: #000;
     text-align: center;
     bottom: 0;
     width: 100%;
@@ -373,7 +386,6 @@ form {
 }
 
 .aligner-item {
-  width: 70%;
   padding-top: 50px;
   padding-bottom: 20px;
 }
@@ -815,11 +827,12 @@ button.close:hover {
 }
 
 .form-control:hover {
-    background-color:#16c32b;
+    background-color: #41ff58e8;
 }
-    /* Draw the up arrow in the button*/
 
-    /* Code taken from https://developpaper.com/django-builds-personal-blogs-back-to-the-top-floating-buttons-vector-icons-footer-sinks-and-sticky-sidebars/ */
+/* Draw the up arrow in the button*/
+
+/* Code taken from https://developpaper.com/django-builds-personal-blogs-back-to-the-top-floating-buttons-vector-icons-footer-sinks-and-sticky-sidebars/ */
 
     .toTop-arrow {
         width: 3.5rem;
@@ -872,6 +885,28 @@ button.close:hover {
         width: 100%;
     }
 
+    .login-content {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
     #backHomeIcon {
         padding-right: 10px;
     }
+
+    .img-bg-login {
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        z-index: -1;
+        position: fixed;
+}
