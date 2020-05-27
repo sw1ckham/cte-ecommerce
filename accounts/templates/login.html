@@ -6,28 +6,31 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="col-12">
-        <h1 class="page-headings">Log In</h1>
-        <hr class="block-divider">
-    </div>
-</div>
+<div class="image-wrapper">
+    <img class="img-bg-login" src="{{ MEDIA_URL }}images/18.jpg" alt="background-image">
 
-<div class="container aligner login-form">
-    <div class="row justify-content-center aligner">
-        <div class="col-12 aligner-item">
-            <form method="POST" class="login">
-                {% csrf_token %} {{ login_form | as_bootstrap }}
-                <div class="text-center">
-                    <button type="submit" class="btn btn-default">Login</button>
-                </div>
-            </form>
-            <p class="text-center product-description"><a href="{% url 'password_reset' %}">Reset Password</a></p>
-            <p class="text-center product-description">Don't have an account? <a href="{% url 'register' %}">Sign Up Here</a></p>
+    <div class="container">
+        <div class="col-12">
+            <h1 class="page-headings">Log In</h1>
+            <hr class="block-divider">
+        </div>
+    </div>
+
+    <div class="container aligner login-form">
+        <div class="row justify-content-center aligner">
+            <div class="col-12 aligner-item login">
+                <form method="POST">
+                    {% csrf_token %} {{ login_form | as_bootstrap }}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </div>
+                </form>
+                <p class="text-center product-description"><a href="{% url 'password_reset' %}">Reset Password</a></p>
+                <p class="text-center product-description">Don't have an account? <a href="{% url 'register' %}">Sign Up Here</a></p>
+            </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}
 
