@@ -1,3 +1,26 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 
 {% block page_title %}Success!{% endblock %}
+
+{% block content %}
+
+<div class="image-wrapper">
+    <img class="img-bg-success" src="{{ MEDIA_URL }}images/18.jpg" alt="">
+
+
+    <div class="container success-content">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="product-title">Success! You're payment has gone through</h1>
+
+                <p class="product-description">Thank you.</p>
+            </div>
+            <div class="col-12">
+                <a id="backtohome" href="{% url 'index' %}"><i class="fas fa-home" id="backHomeIcon"></i>Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
