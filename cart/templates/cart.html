@@ -42,11 +42,7 @@
                                         <button for="quantity" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
                                     </div>
                                 </div>
-                            </form>
-                            
-                            <form class="form-inline quantity-select-form" method="post" action="{% url 'adjust_cart' item.id %}">
-                                {% csrf_token %}
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="input-group">
                                         <label class="edit-size-label" for="size-options">Size:</label>
                                             <select id="size-options" name="size-options">
@@ -56,7 +52,7 @@
                                             </select>
                                         <button for="size-options" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>                               
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
                         </p>
                 </div>
