@@ -1,6 +1,7 @@
 from django.db import models
 from multiselectfield import MultiSelectField
 from django_resized import ResizedImageField
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -10,17 +11,17 @@ class Product(models.Model):
         max_length=250, default="")
     description = models.TextField(max_length=200)
     size_choices = [
-                    ('4x6', "4x6"),
-                    ('5x7', '5x7'),
-                    ('8x8', '8x8'),
-                    ('11x4', '11x4'),
-                    ('12x12', '12x12'),
-                    ('8×10', '8×10'),
-                    ('5×15', '5×15'),
-                    ('12×36', '12×36'),
-                    ('8×24', '8×24'),
-                    ('16×20', '16×20'),
-                    ('20×30', '20×30')
+                    (1 , '4x6'),
+                    (2 , '5x7'),
+                    (3, '8x8'),
+                    (4, '11x4'),
+                    (5, '12x12'),
+                    (6, '8×10'),
+                    (7, '5×15'),
+                    (8, '12×36'),
+                    (9, '8×24'),
+                    (10, '16×20'),
+                    (11, '20×30')
     ]
     size = MultiSelectField(
         choices=size_choices)
@@ -35,3 +36,4 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
