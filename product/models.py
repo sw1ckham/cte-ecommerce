@@ -25,7 +25,7 @@ class Product(models.Model):
     ]
     size = MultiSelectField(
         choices=size_choices)
-    image = ResizedImageField(size=[800, 600], quality=90, upload_to='images')
+    image = ResizedImageField(size=[800, 800], quality=90, upload_to='images')
     CAT_CHOICES = [
         ('paper', 'Paper'),
         ('canvas', 'Canvas')
