@@ -25,6 +25,14 @@
 </div>
 
 <div class="container">
+    <div class="row">
+        <div class="col-12 backhome-wrapper">
+            <a id="backtohome" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart" id="backHomeIcon"></i>Back to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <div class="row row-flex checkout-row">
         {% for item in cart_items %}
             <div class="col-12 col-sm-4 col-md-3 panel-checkout">
