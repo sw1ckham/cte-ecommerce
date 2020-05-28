@@ -24,7 +24,7 @@ html {
 body {
     padding-top: 81px;
     font-family: 'Montserrat Alternates', sans-serif;
-    background-color: #130d0dc9;
+    background: linear-gradient(to bottom right, #000000 , #0000007d);
     width: 100%;
     margin: 0;
     padding-left: 0px;
@@ -89,13 +89,26 @@ body {
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 768px) {
     .register {
-        width: 70%;
+    width: 70%;
     }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 768px) {
+    .register-form {
+    width: 70%;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .register {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1440px) {
     .login {
         width: 70%;
     }
@@ -133,16 +146,22 @@ h2 {
 /*--Buttons--*/
 
 .btn {
-    color: #16c32b;
-    background-color: #fff;
+    color:#fff;
+    background-color:#313131;
     transition: transform .3s ease-in-out;
-    outline: none;
+    outline: #fff;
+    border: 1px solid #fff;
 }
 
 .btn:hover {
     color: #fff;
     background-color: #16c32b;
     transform: scale(1.1);
+    outline: #fff;
+    border: 1px solid #fff;
+}
+
+.btn:active {
     outline: none;
 }
 
@@ -151,6 +170,15 @@ h2 {
 }
 
 /*-- NavBar --*/
+
+.navbar-right .dropdown-menu {
+    right: auto;
+    left: auto;
+}
+
+.navbar-inverse .navbar-nav>.open>a {
+    background-color: #000!important;
+}
 
 #active-navlink {
     color: #16c32b;
@@ -224,9 +252,10 @@ h2 {
 }
 
 .dropdown-menu {
-    background-color: #000;
+    background-color: #403f3f;
     text-align: center;
     border: 1px solid #fff;
+    min-width: auto;
 }
 
 .navbar-collapse {
@@ -255,16 +284,6 @@ h2 {
   padding: 0;
   margin: 0;
   bottom: -100px;
-}
-
-.img-bg-success {
-  background-size: cover;
-  height: auto;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  bottom: -100px;
-  z-index: -1;
 }
 
 @media (min-width: 768px) {
@@ -468,19 +487,19 @@ i {
     max-height: 800px; 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .myImg {
         width: auto;
     }
 }
 
 .product-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #fff;
 }
 
 .product-description {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: 'Montserrat Alternates', sans-serif;
@@ -527,7 +546,7 @@ select:hover {
 }
 
 .panel-default {
-    border-color: transparent;
+    border: none;
     position: relative;
     padding: none;
 }
@@ -558,13 +577,14 @@ select:hover {
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 450px;
+    height: auto;
     margin: 0 auto;
     overflow: hidden;
     cursor: pointer;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    padding-bottom: 10px;
 }
 
 .product:hover {
@@ -585,12 +605,14 @@ select:hover {
     color: #fff;
     z-index: 3;
     padding-top: 20px;
+    position: absolute;
+    bottom: 2px;
 }
 
 .toggle-description-show {
     width: 100%;
-    height: 90%;
-    background: linear-gradient(to bottom right, #000000 , #0ba92e);
+    height: 100%;
+    background: linear-gradient(to bottom right, #000000 , #56315a);
     position: absolute;
     top: 0;
     left: 0;
@@ -598,7 +620,7 @@ select:hover {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 10%;
+    padding: 10px;
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 10px;
@@ -678,7 +700,7 @@ select:hover {
     border-radius: 4px;
     padding: 5px;
     position: relative;
-    background-color: #c159de7d;
+    background-color: #c159de5c;
     vertical-align: middle;
     text-align: center;
     width: 250px;
@@ -728,14 +750,23 @@ legend {
 
 /*-- Cart --*/
 
+.input-group-addon {
+    color: #000;
+    font-weight: 700;
+}
+
+select option {
+    color: #fff;
+}
+
 .panel-cart {
     display: table-cell;
     margin-bottom: 10px;
-    border: 1px solid #cf89ff;
+    border: 1px solid #b65ff3;
     border-radius: 4px;
     padding: 5px;
     position: relative;
-    background-color: #c159de7d;
+    background-color: #46324c8f;
     vertical-align: middle;
     text-align: center;
     margin-right: 5px;
@@ -772,10 +803,10 @@ legend {
 }
 
 .total-wrapper {
-    border: 1px solid #cf89ff;
+    border: 1px solid #b65ff3;
     border-radius: 4px;
     margin-top: 0;
-    background-color: #c159de7d;
+    background-color: #46324c8f;
     display: inline-block;
     margin-bottom: 5px;
     width: 200px;
@@ -815,7 +846,8 @@ legend {
 .modal-dialog { 
     display: inline-block;  
     text-align: left;   
-    vertical-align: middle;
+    vertical-align: middle;#
+    margin: 0;
 }
 
 .modal-content {
@@ -855,12 +887,36 @@ button.close:hover {
     outline: none;
 }
 
-.form-control:hover {
-    background-color: #41ff58e8;
-}
-
 .input-group .form-control {
     float: none;
+}
+
+
+#id_email,
+#id_username,
+#id_password1,
+#id_password2,
+#id_first_name,
+#id_last_name
+ {
+    background-color: #313131;
+    border-color: #fff;
+    color: #fff;
+}
+
+input {
+    background-color: #313131!important;
+    border-color: #fff!important;
+    color: #fff!important;
+}
+
+.form-control {
+    background-color: #313131!important;
+    color: #fff;
+}
+
+input:-internal-autofill-selected {
+    background-color: #313131!important;
 }
 
 /* Draw the up arrow in the button*/
@@ -875,7 +931,7 @@ button.close:hover {
         border: 0;
         border-radius: 33%;
         opacity: 0.7;
-        background: #16c32b;
+        background: #313131;
         cursor: pointer;
         position: fixed;
         right: 2rem;
@@ -902,7 +958,7 @@ button.close:hover {
     }
 
     #backtohome:hover {
-        color: #16c32b;
+        color: #16ce2b;
         text-decoration: none;
     }
 
@@ -944,4 +1000,14 @@ button.close:hover {
         margin: 0;
         z-index: -1;
         position: fixed;
+}
+
+    .img-bg-success {
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    bottom: -100px;
+    z-index: -1;
 }
