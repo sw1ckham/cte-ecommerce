@@ -169,7 +169,17 @@ h2 {
 
 .navbar-header .navbar-brand:hover {
     color: #16c32b;
-    transform: scale(1.5);
+    transform: scale(1.4);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        font-size: 18px;
+    }
 }
 
 #navbar ul li a {
@@ -626,6 +636,21 @@ select:hover {
 
 /*-- Checkout --*/
 
+/*-- Stripe error message --*/
+
+#stripe-error-message {
+    color: #fff;
+    background-color: red;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#credit-card-errors {
+    padding-bottom: 5px;
+}
+
 .payment-forms {
     margin-top: 50px;
 }
@@ -765,15 +790,6 @@ legend {
         right: 50px;
     }
 }
-/* 
-@media (min-width: 1440px) {
-    .total-wrapper {
-        position: fixed;
-        top: 65%;
-        right: 50px;
-    }
-} */
-
 
 /*--Image Modal--*/
 
@@ -880,7 +896,7 @@ button.close:hover {
     /*-- Success Page --*/
 
     #backtohome {
-        font-size: 3rem;
+        font-size: 2rem;
         color: #fff;
         text-decoration: none;
     }
@@ -891,8 +907,13 @@ button.close:hover {
     }
 
     #backHomeIcon {
-        font-size: 3rem;
+        font-size: 2rem;
         color: #fff;
+        padding-right: 10px;
+    }
+
+    .backhome-wrapper {
+        margin-top: 30px;
     }
 
     .success-content {
@@ -912,10 +933,7 @@ button.close:hover {
     position: relative;
     width: 100%;
     height: 100%;
-}
 
-    #backHomeIcon {
-        padding-right: 10px;
     }
 
     .img-bg-login {
