@@ -11,7 +11,7 @@ class Art(models.Model):
     name = models.CharField(
         max_length=20)
     description = models.CharField(max_length=200)
-    image = ResizedImageField(size=[800, 600], quality=90, upload_to='images')
+    image = ResizedImageField(size=[800, 800], quality=90, upload_to='images')
     catergorie = models.CharField(max_length=10, choices=CAT_CHOICES, default='canvas')
 
     def __str__(self):
