@@ -37,10 +37,10 @@
                 <div class="product">
                     <img data-toggle="modal" data-target="#myModal{{ forloop.counter }}" class="img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="">
                 </div>
-                
                 <div class="toggle-show-button">
                     <i class="fas fa-plus toggle-show-icon"></i>
                 </div>
+
                 <div class="toggle-description">
                         <h3 class="product-title">{{ product.name }}</h3>
 
@@ -49,6 +49,8 @@
                         <p class="product-price">£{{ product.price }}</p>
 
                         <p class="product-description">{{ product.catergorie }}</p>
+
+                        <p class="product-description">{{ product.size }}</p>
                         
                         <!-- <label class="select-size-label" for="sel1">Select Size:</label>
                         <select id="size-options" name="size_options">
