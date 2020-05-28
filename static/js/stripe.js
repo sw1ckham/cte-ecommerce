@@ -26,12 +26,24 @@ $(function(){
         } else {
             $('#stripe-error-message').text(response.error.message);
             $('#credit-card-errors').show()
-            $('html, body').animate({
-                scrollTop: $("#credit-card-errors").first().offset().top-30
-            }, 2000);
+            if ($('#credit-card-errors')) {
+                $('html, body').animate({
+                    scrollTop: $('#credit-card-errors').offset()
+                }, 1000);
+             };
             $('#validate_card_btn').attr('disables', false);
         }
     });
     return false;
     });
 });
+
+
+
+
+// if (error) {
+                   
+//     var errorElement = document.getElementById("credit-card-errors");
+                   
+//     window.scrollTo(0, errorElement.offsetTop);
+//             };
