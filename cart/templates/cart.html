@@ -37,6 +37,7 @@
                     <p class="product-description">{{ item.product.description }}</p>
                     <p class="product-price">£{{ item.product.price }}</p>
                     <p class="product-description">{{ product.catergorie }}</p>
+                    <p class="product-description">{{ product.size }}</p>
                         <p>
 
                             <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
