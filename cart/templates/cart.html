@@ -39,7 +39,9 @@
                                         <div class="input-group-addon">Qty</div>
                                         <input name="quantity" type="number" value="{{item.quantity}}" min="0" max="999" class="form-control">
                                         <div class="input-group-addon">{{item.quantity}}</div>
-                                        <button for="quantity" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                        <div class="adjust-btn">
+                                            <button for="quantity" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                                        </div> 
                                     </div>
                                 </div>
                                 <!-- <div class="form-group">
@@ -68,12 +70,14 @@
                 </div>  
         {% endfor %}
         
-        <div class="col-12 col-sm-6 text-center total-wrapper">
-            <p class="product-description">Total</p>
-            <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
-            {% if cart_items %}
-                <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
-            {% endif %}
+        <div class="col-12 col-sm-6 text-center">
+            <div class="total-wrapper">
+                <p class="product-description">Total</p>
+                <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
+                {% if cart_items %}
+                    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
