@@ -1,3 +1,6 @@
+
+
+
 $(function(){
     $('#payment-form').submit(function(){
         var form = this;
@@ -22,7 +25,10 @@ $(function(){
 
         } else {
             $('#stripe-error-message').text(response.error.message);
-            $('#credit-card-errors').show();
+            $('#credit-card-errors').show()
+            $('html, body').animate({
+                scrollTop: $("#credit-card-errors").first().offset().top-30
+            }, 2000);
             $('#validate_card_btn').attr('disables', false);
         }
     });
