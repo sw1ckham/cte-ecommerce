@@ -45,7 +45,7 @@
                             {% if user.is_authenticated %}
                                 <li><a class="nav-anima" {% if request.resolver_match.url_name == 'about' %}id="active-navlink"{% endif %} href="{% url 'about' %}">About</a></li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle nav-anima" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle nav-anima" {% if request.resolver_match.url_name == 'paper' %}id="active-navlink"{% endif %} {% if request.resolver_match.url_name == 'canvas' %}id="active-navlink"{% endif %} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
                                     </a>
                                     <ul class="dropdown-menu navbar-dropdown-heading" aria-labelledby="navbarDropdown">
@@ -66,7 +66,7 @@
                             {% else %}
                                 <li><a class="nav-anima" {% if request.resolver_match.url_name == 'about' %}id="active-navlink"{% endif %} href="{% url 'about' %}">About</a></li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-anima nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-anima nav-link dropdown-toggle" {% if request.resolver_match.url_name == 'paper' %}id="active-navlink"{% endif %} {% if request.resolver_match.url_name == 'canvas' %}id="active-navlink"{% endif %} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Gallery
                                     </a>
                                     <ul class="dropdown-menu navbar-dropdown-heading" aria-labelledby="navbarDropdown">
