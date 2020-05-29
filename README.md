@@ -111,6 +111,7 @@ the initial view very simple and just a piece of his work.
 pay for their products and the address can be different each time to deliver too. 
 * I will be implementing a price changing feature. The price will not be visible until you pick a size of a print, then the price will be dependant on the size chosen.
 * I will be implementing a feature to sign up to a regular email show caseing new pieces of art. 
+* I will be creating a Cart Model so when the user logs out, their shopping cart will be saved. I will also be able to implement the cart 
 
 ### Technologies used
 
@@ -185,6 +186,10 @@ default value rendered. I added value="1" to my input html which stopped the pro
  * [Solution](https://stackoverflow.com/questions/37950121/how-can-i-put-bootstrap-modal-in-horizontally-center)
  6. How to render content over a background image
  * [Solution](https://css-tricks.com/text-blocks-over-image/)
+ 7. Vertical alignment using flexbox
+ * [Solution](https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/)
+ 8. Carousel on About page
+ * [Solution](https://bootsnipp.com/snippets/xBdN)
 
 ## Credits
 
