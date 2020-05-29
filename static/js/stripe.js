@@ -37,13 +37,3 @@ $(function(){
     return false;
     });
 });
-
-
-
-
-// if (error) {
-                   
-//     var errorElement = document.getElementById("credit-card-errors");
-                   
-//     window.scrollTo(0, errorElement.offsetTop);
-//             };
