@@ -177,12 +177,13 @@ h2 {
 }
 
 .navbar-inverse .navbar-nav>.open>a {
-    background-color: #000!important;
+    background-color: transparent!important;
 }
 
 #active-navlink {
     color: #16c32b;
     transform: scale(1.4);
+    margin-top: -1px;
 }
 
 .navbar-header {
@@ -210,7 +211,7 @@ h2 {
     }
 }
 
-#navbar ul li a {
+.navbar-collapse .nav .nav-link {
     color: #fff;
 }
 
@@ -333,6 +334,39 @@ h2 {
         bottom: -100px;
     }
 }
+
+    .img-bg-success {
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    bottom: -100px;
+    z-index: -1;
+}
+
+@media (min-width: 1440px) {
+    .img-bg-success {
+        background-size: cover;
+        height: 850px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        bottom: -100px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .img-bg-success {
+        background-size: cover;
+        height: 1650px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        bottom: -100px;
+    }
+}
+
 
 /*-- About --*/
 
@@ -556,8 +590,27 @@ select:hover {
     width: 100%;
     position: relative;
     display: inline-block;
-    height: 100%;
+    height: 325px;
 }
+
+@media (min-width: 375px) {
+    .panel-body {
+        height: 450px;
+    }
+}
+
+@media (min-width: 768px) {
+    .panel-body {
+        height: 500px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .panel-body {
+        height: 525px;
+    }
+}
+
 
 .panel {
     background-color: transparent;
@@ -846,7 +899,7 @@ select option {
 .modal-dialog { 
     display: inline-block;  
     text-align: left;   
-    vertical-align: middle;#
+    vertical-align: middle;
     margin: 0;
 }
 
@@ -941,9 +994,21 @@ input:-internal-autofill-selected {
     /* Unfocus when clicking a button*/
     .toTop-arrow {
         outline: none;
+        z-index: 99;
+        cursor: pointer;
     }
 
     /*--Style Icon for arrow --*/
+
+    #BackTop {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        #BackTop {
+            display: none;
+        }
+    }
 
     #toTopIcon {
         color: #fff;
@@ -1002,12 +1067,3 @@ input:-internal-autofill-selected {
         position: fixed;
 }
 
-    .img-bg-success {
-    background-size: cover;
-    height: auto;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    bottom: -100px;
-    z-index: -1;
-}
