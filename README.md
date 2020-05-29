@@ -158,6 +158,9 @@ default value rendered. I added value="1" to my input html which stopped the pro
 2. White space coming up on the right, as a margin around my body.
 * [Solution](https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend)
 
+3. User was able to refresh success.html and redo form submission which would throw a stripe error as it is trying to take the payment again, but the cart is empty as they already paid.
+* 
+
 ## Continous Testing
 
 ### Deployment 
