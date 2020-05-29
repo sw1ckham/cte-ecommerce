@@ -5,6 +5,7 @@ html {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+    -webkit-tap-highlight-color: #16ce2b;
 }
 
 
@@ -171,14 +172,28 @@ h2 {
 
 /*-- NavBar --*/
 
+/*-- Centering and colouring canvas and paper dropdown navlinks --*/
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    margin-right: 6px;
+}
+
 .navbar-right .dropdown-menu {
     right: auto;
     left: auto;
 }
 
+/*-- Taking away background colour from 'Gallery'--*/
+
 .navbar-inverse .navbar-nav>.open>a {
     background-color: transparent!important;
 }
+
+/*-- Changing colour of nav link when on that page --*/
 
 #active-navlink {
     color: #16c32b;
@@ -189,6 +204,8 @@ h2 {
 .navbar-header {
     padding: 15px;
 }
+
+/*-- Changing colour of logo when hover over it --*/
 
 .navbar-header .navbar-brand {
     color: #fff;
@@ -201,6 +218,8 @@ h2 {
     transform: scale(1.4);
 }
 
+/*-- Changing size of logo dependant on screen --*/
+
 .navbar-brand {
     font-size: 1.5rem;
 }
@@ -211,9 +230,13 @@ h2 {
     }
 }
 
+/* -- Colouring nav links white --*/
+
 .navbar-collapse .nav .nav-link {
     color: #fff;
 }
+
+/*-- Changing nav links size and colour when hover --*/
 
 #navbar ul li a:hover {
     color: #16c32b;
@@ -278,7 +301,7 @@ h2 {
 /*-- Homepage --*/
 
 .img-bg {
-  background: url('{{ MEDIA_URL }}images/mobile-homepage.jpg') no-repeat center top;
+  background: url('https://cte-ecommerce.s3.eu-west-2.amazonaws.com/media/images/mobile-homepage.jpg') no-repeat center top;
   background-size: cover;
   height: 800px;
   width: 100%;
@@ -289,7 +312,7 @@ h2 {
 
 @media (min-width: 768px) {
     .img-bg {
-        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background: url('https://cte-ecommerce.s3.eu-west-2.amazonaws.com/media/images/sophiewebmain.png') no-repeat center top;
         background-size: cover;
         height: 659px;
         width: 100%;
@@ -299,11 +322,11 @@ h2 {
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
     .img-bg {
-        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background: url('https://cte-ecommerce.s3.eu-west-2.amazonaws.com/media/images/sophiewebmain.png') no-repeat center top;
         background-size: cover;
-        height: 750px;
+        height: 660px;
         width: 100%;
         padding: 0;
         margin: 0;
@@ -313,9 +336,9 @@ h2 {
 
 @media (min-width: 1440px) {
     .img-bg {
-        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background: url('https://cte-ecommerce.s3.eu-west-2.amazonaws.com/media/images/sophiewebmain.png') no-repeat center top;
         background-size: cover;
-        height: 900px;
+        height: 810px;
         width: 100%;
         padding: 0;
         margin: 0;
@@ -325,9 +348,9 @@ h2 {
 
 @media (min-width: 2560px) {
     .img-bg {
-        background: url('/media/images/front-page-images/front-page.jpg') no-repeat center top;
+        background: url('https://cte-ecommerce.s3.eu-west-2.amazonaws.com/media/images/sophiewebmain.png') no-repeat center top;
         background-size: cover;
-        height: 1650px;
+        height: 1700px;
         width: 100%;
         padding: 0;
         margin: 0;
@@ -583,6 +606,10 @@ select:hover {
     border: none;
     position: relative;
     padding: none;
+}
+
+.panel {
+    box-shadow: none;
 }
 
 .panel-body {
@@ -934,6 +961,16 @@ button.close:hover {
 
 /*-- Forms --*/
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    background-color: #313131;
+    -webkit-box-shadow: 0 0 0px 1000px #313131 inset;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff;
+}
+
 .form-group {
     padding: 5px;
     width: 100%;
@@ -987,7 +1024,7 @@ input:-internal-autofill-selected {
         background: #313131;
         cursor: pointer;
         position: fixed;
-        right: 2rem;
+        right: 1rem;
         bottom: 2rem;
     }
 
