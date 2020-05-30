@@ -23,6 +23,8 @@ html {
 body {
     padding-top: 81px;
     font-family: 'Montserrat Alternates', sans-serif;
+    background: -webkit-gradient(linear, left top, right bottom, from(#000000) , to(#0000007d));
+    background: -o-linear-gradient(top left, #000000 , #0000007d);
     background: linear-gradient(to bottom right, #000000 , #0000007d);
     width: 100%;
     margin: 0;
@@ -50,21 +52,62 @@ body {
 }
 
 .row.row-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-top: 30px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 @media (min-width: 768px){
     .row.row-flex {
-        justify-content: start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
     }
 }
+
 
 .fixed {
     position: fixed;
     bottom: 0px;
+}
+
+/*-- To center align element --*/
+
+.aligner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+
+@media(min-width: 768px) {
+    .aligner {
+        align-items: center;
+    }
+}
+
+.aligner-item {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
 /*--carousel--*/
@@ -93,21 +136,6 @@ body {
     }
 }
 
-.vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-
-.Aligner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Aligner-item {
-  max-width: 50%;
-}
 
 /* ------------------- Carousel Styling ------------------- */
 
@@ -144,6 +172,13 @@ body {
 }
 
 /*-- Log in and register forms --*/
+
+
+.login-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
 .register-form {
     min-height: calc(100vh - 415px);
@@ -198,7 +233,7 @@ body {
     }
 }
 
-/*--Heading--*/
+/*--Headings--*/
 
 h2 {
     color: #fff;
@@ -217,12 +252,16 @@ h2 {
     margin-bottom: 5px;
 }
 
-/*--Buttons--*/
+/*--Button stylings for all buttons--*/
 
 .btn {
     color:#fff;
     background-color:#313131;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    transition: -webkit-transform .3s ease-in-out;
+    -o-transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
     outline: #fff;
     border: 1px solid #fff;
 }
@@ -230,7 +269,9 @@ h2 {
 .btn:hover {
     color: #fff;
     background-color: #16c32b;
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     outline: #fff;
     border: 1px solid #fff;
 }
@@ -270,7 +311,9 @@ h2 {
 
 #active-navlink {
     color: #16c32b;
-    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4);
     margin-top: -1px;
 }
 
@@ -282,13 +325,17 @@ h2 {
 
 .navbar-header .navbar-brand {
     color: #fff;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     
 }
 
 .navbar-header .navbar-brand:hover {
     color: #16c32b;
-    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4);
 }
 
 /*-- Changing size of logo dependant on screen --*/
@@ -316,12 +363,18 @@ h2 {
 }
 
 .nav-anima {
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    transition: -webkit-transform .5s ease-in-out;
+    -o-transition: transform .5s ease-in-out;
     transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
 }
 
 .nav-anima:hover {
     color: #16c32b;
-    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
 }
 
 #main-navbar {
@@ -336,9 +389,14 @@ h2 {
     cursor: pointer;
 }
 
+/*-- No animation on canvas and paper pages --*/
+
 .dropdown-item {
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
 }
+
 
 .dropdown-menu li a:hover {
     background-color: #000;
@@ -371,7 +429,7 @@ h2 {
     }
 }
 
-/*-- Homepage --*/
+/*-- Homepage Images--*/
 
 .img-bg {
   background: url('https://cte-ecommerce.s3.eu-west-2.amazonaws.com/media/images/mobile-homepage.jpg') no-repeat center top;
@@ -511,22 +569,7 @@ form {
     vertical-align:middle;
 }
 
-.aligner {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
 
-@media(min-width: 768px) {
-    .aligner {
-        align-items: center;
-    }
-}
-
-.aligner-item {
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
 
 .control-label {
     color: #fff;
@@ -583,7 +626,9 @@ i {
     background-color: #c67605;
 }
 
-/*--Product--*/
+/*-----Product Panels-----*/
+
+/*--- Changin sizes of images as screen size changes ----*/
 
 .myImg {
     width: 100%;
@@ -596,107 +641,7 @@ i {
     }
 }
 
-.product-title {
-    font-size: 2.5rem;
-    color: #fff;
-}
-
-.product-description {
-    font-size: 1.5rem;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-family: 'Montserrat Alternates', sans-serif;
-}
-
-.product-description a {
-    color: #0089ff;
-}
-
-.control-label a {
-    color: #0089ff;
-}
-
-.product-price {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.select-size-label {
-    padding-top: 100px;
-}
-
-.size-option {
-    border-radius: 4px;
-    text-align: center;
-}
-
-
-select {
-    background-color: #fff;
-    border-radius: 4px;
-    outline: none;
-    color: #fff;
-}
-
-select:hover {
-    background-color: #16c32b;
-    border: none;
-    outline: none;
-}
-
-.quantity-select-form {
-    padding-top: 10px;
-}
-
-.panel-default {
-    border: none;
-    position: relative;
-    padding: none;
-}
-
-.panel {
-    box-shadow: none;
-}
-
-.panel-body {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    display: inline-block;
-    height: 325px;
-}
-
-@media (min-width: 375px) {
-    .panel-body {
-        height: 450px;
-    }
-}
-
-@media (min-width: 768px) {
-    .panel-body {
-        height: 500px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .panel-body {
-        height: 525px;
-    }
-}
-
-
-.panel {
-    background-color: transparent;
-}
-
-
-.panel-heading {
-  padding: 0px 15px;
-  display: inline-block;
-  width: 400px;
-  border: none;
-}
-
+/*---- Product styling (shop panels) ----*/
 
 .product {
     background-size: contain;
@@ -717,10 +662,119 @@ select:hover {
     opacity: 0.7;
 }
 
+.product-title {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
 .product-description {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat Alternates', sans-serif;
     min-height: 40px;
     color: #fff;
 }
+
+.product-description a {
+    color: #0089ff;
+}
+
+.control-label a {
+    color: #0089ff;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+select {
+    background-color: #fff;
+    border-radius: 4px;
+    outline: none;
+    color: #313131;
+}
+
+select:hover {
+    background-color: #16c32b;
+    border: none;
+    outline: none;
+}
+
+.quantity-select-form {
+    padding-top: 10px;
+}
+
+/*--- Just panel styles ---*/
+
+.panel-default {
+    border: 0;
+    position: relative;
+    padding: 0;
+}
+
+.panel {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.panel-heading {
+  padding: 0px 15px;
+  display: inline-block;
+  width: 400px;
+  border: none;
+}
+
+.panel-body {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    height: 360px;
+}
+
+.panel-heading:before, .panel-heading:after {
+  content: " ";
+  display: table;
+}
+
+.panel-info>.panel-heading {
+    background-color: transparent;
+    border-color: transparent;
+    border: 0;
+}
+
+.caption {
+    width: 100%;
+}
+
+@media (min-width: 375px) {
+    .panel-body {
+        height: 450px;
+    }
+}
+
+@media (min-width: 425px) {
+    .panel-body {
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .panel-body {
+        height: 550px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .panel-body {
+        height: 570px;
+    }
+}
+
+/*------ Toggle Styles -----*/
 
 .toggle-description {
     display: none;
@@ -732,57 +786,26 @@ select:hover {
     z-index: 3;
     padding-top: 20px;
     position: absolute;
-    bottom: 2px;
+    bottom: 0px;
 }
 
 .toggle-description-show {
     width: 100%;
     height: 100%;
+    background: -webkit-gradient(linear, left top, right bottom, from(#000000) , to(#56315a));
+    background: -o-linear-gradient(top left, #000000 , #56315a);
     background: linear-gradient(to bottom right, #000000 , #56315a);
     position: absolute;
     top: 0;
     left: 0;
     display: inline-block;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 10px;
     background-repeat: no-repeat;
     background-position: center center;
     border-radius: 10px;
 }
-
-.caption {
-    width: 100%;
-}
-
-.edit-size-label {
-    color: #fff;
-    font-size: 1.7rem; 
-    padding-right: 5px;
-}
-
-#size-options {
-    color: #000;
-    border-radius: 4px;
-    font-size: 1.7rem;
-    padding-left: 5px;
-    height: 34px;
-}
-
-.panel-heading:before, .panel-heading:after {
-  content: " ";
-  display: table;
-}
-
-.panel-info>.panel-heading {
-    color: transparent;
-    background-color: transparent;
-    border-color: none;
-    border: none;
-}
-
-/*-- Checkout --*/
 
 /*-- Stripe error message --*/
 
@@ -808,11 +831,7 @@ select:hover {
     color: #e65b5b;
 }
 
-/*-- Payment forms --*/
-
-.payment-forms {
-    margin-top: 50px;
-}
+/*-- Checkout --*/
 
 .checkout-title {
     font-size: 3rem;
@@ -820,7 +839,9 @@ select:hover {
 }
 
 .total-checkout-wrapper {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-left: 10px;
 
 }
@@ -853,7 +874,6 @@ select:hover {
     margin: 0 auto;
     overflow: auto;
 }
-
 
 .product-title-checkout {
     font-size: 2rem;
@@ -1024,6 +1044,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     background-color: #313131;
     -webkit-box-shadow: 0 0 0px 1000px #313131 inset;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #fff;
 }
@@ -1037,7 +1058,6 @@ input:-webkit-autofill:active  {
 .input-group .form-control {
     float: none;
 }
-
 
 #id_email,
 #id_username,
@@ -1066,9 +1086,15 @@ input:-internal-autofill-selected {
     background-color: #313131!important;
 }
 
-/* Draw the up arrow in the button*/
+/*-- Payment forms --*/
+
+.payment-forms {
+    margin-top: 50px;
+}
+
 
 /* Code taken from https://developpaper.com/django-builds-personal-blogs-back-to-the-top-floating-buttons-vector-icons-footer-sinks-and-sticky-sidebars/ */
+/* ---- To Top Button ----*/
 
     .toTop-arrow {
         width: 3.5rem;
@@ -1108,7 +1134,7 @@ input:-internal-autofill-selected {
         color: #fff;
     }
 
-    /*-- Success Page --*/
+    /*-- Back a page link --*/
 
     #backtohome {
         font-size: 2rem;
@@ -1131,33 +1157,10 @@ input:-internal-autofill-selected {
         margin-top: 30px;
     }
 
-    .success-content {
-        position: absolute;
-        top: 50px; 
-        left: 0; 
-        width: 100%;
-    }
-
-    .login-content {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-    }
-
     .image-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
 
     }
-
-    .img-bg-login {
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        z-index: -1;
-        position: fixed;
-}
 
