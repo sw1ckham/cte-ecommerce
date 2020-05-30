@@ -23,6 +23,7 @@ $(document).ready(function(){
         //     mybutton.style.display = "none";
         // }
         // }
+        
             $('#BackTop').click(function () {
             $('html,body').animate({scrollTop: 0}, 500);
             return false;
