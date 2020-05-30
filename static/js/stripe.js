@@ -25,12 +25,12 @@ $(function(){
 
         } else {
             $('#stripe-error-message').text(response.error.message);
-            $('#credit-card-errors').show()
+            $('#credit-card-errors').show();
             if ($('#credit-card-errors')) {
                 $('html, body').animate({
                     scrollTop: $('#credit-card-errors').offset()
                 }, 1000);
-             };
+             }
             $('#validate_card_btn').attr('disables', false);
         }
     });
