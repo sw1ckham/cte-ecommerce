@@ -42,9 +42,9 @@ CTE-Ecommerce
 * Provide a clean design to highlight the business owners artwork
 * Implement simple navigation around the site for ease of use
 * Create a short 3 step process to purchasing a product
-* Create a form for users to contact the business owners
 * Create responsive galleries of the business owners artwork
-* Provide a secure way for users to pay for their products and provide a confirmation email
+* Provide a secure way for users to pay for their products.
+* Create fast loading time by compressing images, without affecting the quality of images. 
 
 ### User Goals
 
@@ -59,11 +59,11 @@ As a user I want
 * Have a clear Registration option to become a user of the site
 * Be able to Log In as a returning user
 * To know how many products are in my cart at all times
-* Change the size of my chosen product in my cart and the quantity of that product I want to buy
 * Find contact information about the Artist
 * Find the Artists social media accounts
 * Be able to view the site on all possible screen sizes
-* Once added a product to the cart, be able to navigate back to the shopping page easily
+* Once added a product to the cart, be able to navigate back to the shopping page easily.
+* Once in the Checkout, are able to navigate back to your cart without using the back button. 
 
 ### Design Choices
 
@@ -133,16 +133,59 @@ pay for their products and the address can be different each time to deliver too
 
 ## Requirement files
 
+1. boto3==1.13.12 - The Amazon Web Services (AWS) Software Development Kit (SDK) for Python. 
+2. botocore==1.16.12 - The foundation for the AWS-CLI command line utilities.
+3. dj-database-url==0.5.0 - Config method that returns a Django database connection dictionary with all the data in your URL. 
+4. Django==1.11.28 - Python Framework
+5. django-forms-bootstrap==3.1.0 - Django forms library with helps to work with HTML forms. 
+6. django-multiselectfield==0.1.12 - Allows user to select multiple options from the choices provided in the model. 
+7. django-resized==0.3.11 - Resizes the image uploaded by the user to a max-height and max-width
+8. django-storages==1.9.1 - Provides a variety of storage backends in a single library. 
+9. docutils==0.15.2 -  Modular system for processing documentation into useful formats
+10. gunicorn==20.0.4 - A Python WSGI HTTP Server for UNIX
+11. heroku==0.1.4 - Software to run our app on
+12. jmespath==0.10.0 - Allows you to declaratively specify how to extract elements from a JSON document
+13. Pillow==5.4.1 - Support for opening, manipulating, and saving different image file formats
+14. psycopg2==2.8.5 - PostgreSQL database adaptor. 
+15. python-dateutil==2.8.1 - Is an extension to the standard datetime module
+16. pytz==2020.1 - Direct translation of the Olson timezone database, and changes to the timezone definitions need to be made to this source.
+17. s3transfer==0.3.3 - Python library for managing Amazon S3 transfers
+18. stripe==1.84.0 - Payment system API
 
 ### Testing
 
-All testing was carried out on all screen devises, Google Chrome, FireFox and Internet Explorer.
+All testing was carried out on all screen devices, Google Chrome, FireFox and Internet Explorer.
 
 * [HTML W3C Validation Service](https://validator.w3.org/)
 
+1. Error: Element head is missing a required instance of child element title.
+2. Warning: Consider adding a lang attribute to the html start tag to declare the language of this document.
+3. Error: Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+4. Error: Bad value {% url 'register' %} for attribute href on element a: Illegal character in path segment: { is not allowed.
+5. Error: Stray doctype.
+* Took out unnecessary DOCTYPE. 
+6. Error: Bad value myModal{{ forloop.counter }} for attribute id on element div: An ID must not contain whitespace.
+7. Error: The aria-labelledby attribute must point to an element in the same document.
+* Changed label name to the correct label so they match. 
+8. Error: Bad value {{ MEDIA_URL }}{{ art.image }} for attribute src on element img: Illegal character in path segment: { is not allowed.
+9. Warning: The type attribute is unnecessary for JavaScript resources.
+* Deleted type attributes
+10. Warning: The form role is unnecessary for element form.
+* Deleted role = form. 
+11. Error: Stray end tag span.
+* Deleted stray span
+
 * [CSS W3C Validation Service](https://jigsaw.w3.org/css-validator/)
 
-## Testing user stories
+1. 714	.panel-default	Value Error : padding none is not a padding value : none
+* Fixed - Changed to 0.
+2. 746	.panel-info > .panel-heading	Value Error : border-color none is not a border-color value : none
+* Fixed - Deleted as border: 0 now. 
+3. CSS W3C Validation also picked up that the vendor extentions provided by Auto Prefixer were unknown. 
+
+* [JSHint](https://jshint.com/)
+
+1. Pointed out unnecessary semi-colon, deleted. 
 
 ## Manual Testing 
 
@@ -163,20 +206,32 @@ Carried out by myself, and two other third parties.
 4. Reset passwork functionality
 * You can reset your password, are sent a confirmation messafe
 
+5. Test all user stories
+* All points made in the user stories were verified by myself and two other parties. 
+
+6. Art panels
+* All photos are able to be viewed in larger size, in a modal, on all screen sizes. 
+* All toggle buttons to show product description are below the image on all screen sizes. 
+
+7. You are able to edit the quantity of your product in the cart. 
 
 ## Bugs found during Testing
+
+1. Error messages on register and login pages were same colour as background - could not see!
+* Solution - Styled default error messages in custom.css
 
 ## Bugs found during developement
 
 1. No Quantity auto fill
-* [Solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number) If you were to add a product to the cart without specifying a quantity of that product. You would get a 404 error. This is because there is no 
+* [Solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number) 
+* If you were to add a product to the cart without specifying a quantity of that product. You would get a 404 error. This is because there is no 
 default value rendered. I added value="1" to my input html which stopped the problem. 
 
 2. White space coming up on the right, as a margin around my body.
 * [Solution](https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend)
 
 3. User was able to refresh success.html and redo form submission which would throw a stripe error as it is trying to take the payment again, but the cart is empty as they already paid.
-* 
+* Solution - had to redirect users back to an empty cart page with a 'Success your payment has gone through message'.
 
 ## Continous Testing
 
@@ -188,6 +243,10 @@ Since updating the Pillow version and my requirements.txt the builds have been p
 * [![Build Status](https://travis-ci.org/sw1ckham/cte-ecommerce.svg?branch=master)](https://travis-ci.org/sw1ckham/cte-ecommerce)
 
 ### Deployment 
+
+
+
+
 
 ## Acknowledgements
 
