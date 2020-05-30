@@ -5,9 +5,7 @@ html {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
-    -webkit-tap-highlight-color: #16ce2b;
 }
-
 
 #content-wrap {
   width: 100%;
@@ -81,7 +79,6 @@ body {
   height: auto;
 }
 
-
 .carousel {
     width: 100%;
     margin-top: 10%;
@@ -118,17 +115,6 @@ body {
   border-radius: 15px;
 }
 
-.carousel-caption {
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
-  text-align: left;
-}
 
 .carousel-indicators {
   position: absolute;
@@ -812,6 +798,17 @@ select:hover {
 #credit-card-errors {
     padding-bottom: 5px;
 }
+
+/* Django error messages --*/
+
+#error_id_password2_1,
+#error_id_password2_2,
+#error_id_username_1,
+#error_id_email_1 {
+    color: #e65b5b;
+}
+
+/*-- Payment forms --*/
 
 .payment-forms {
     margin-top: 50px;
