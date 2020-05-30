@@ -148,6 +148,22 @@ All testing was carried out on all screen devises, Google Chrome, FireFox and In
 
 Carried out by myself, and two other third parties. 
 
+1. Login
+* Error when put in the wrong username/password.
+
+2. Registration
+* Error when passwords don't match
+* Error when email doesn't include @ and .co.uk/.com
+* Error when email isn't unique
+* Error when username isn't correct 
+
+3. Social Links
+* Click on the facebook and twitter icon, both open in a new window.
+
+4. Reset passwork functionality
+* You can reset your password, are sent a confirmation messafe
+
+
 ## Bugs found during Testing
 
 ## Bugs found during developement
@@ -163,6 +179,13 @@ default value rendered. I added value="1" to my input html which stopped the pro
 * 
 
 ## Continous Testing
+
+I have used [Travis-CI](https://travis-ci.org/github/sw1ckham/cte-ecommerce) 
+
+* At the beginning of Travis testing I had problems due to the version of 'Pillow' I was using and forgetting to update my requirements.txt.
+Since updating the Pillow version and my requirements.txt the builds have been passing every time. 
+
+* [![Build Status](https://travis-ci.org/sw1ckham/cte-ecommerce.svg?branch=master)](https://travis-ci.org/sw1ckham/cte-ecommerce)
 
 ### Deployment 
 
