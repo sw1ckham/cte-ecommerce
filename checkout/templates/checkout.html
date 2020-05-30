@@ -5,13 +5,13 @@
 {% block page_title %}Checkout{% endblock %}
 
 {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript">
+<script src="https://js.stripe.com/v2/"></script>
+<script>
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+<script src="{% static 'js/stripe.js' %}"></script>
 {% endblock head_js %}
 
 {% block content %}
@@ -64,7 +64,7 @@
 
 <div class="container">
     <div class="row payment-forms">
-            <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+            <form method="post" id="payment-form" action="{% url 'checkout' %}">
                 <div class="col-12 col-md-6">
                         <legend class="checkout-title">Your Details</legend>
 
@@ -77,18 +77,15 @@
                         </div>
                 </div>
                 <div class="col-12 col-md-6">
-                        <legend class="checkout-title">Payment Details</legend>
-
-                        <div class="form-group col-md-6">
+                    <legend class="checkout-title">Payment Details</legend>
+                    <div class="form-group col-md-6">
                             {{ payment_form | as_bootstrap }}
-                        <div class="form-group col-md-12 text-center">
+                    <div class="form-group col-md-12 text-center">
                             <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
-                        </div>
-                        </div>
+                    </div>
                         {% csrf_token %}
                 </div>
             </form>
-        </div>
     </div>
 </div>
 {% endblock %}

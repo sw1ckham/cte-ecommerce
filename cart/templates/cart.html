@@ -38,12 +38,11 @@
                     <p class="product-price">£{{ item.product.price }}</p>
                     <p class="product-description">{{ item.product.catergorie }}</p>
                     <p class="product-description">{{ item.product.size }}</p>
-                        <p>
-
+                    <p>
                             <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                    <label for="quantity" class="sr-only">New Qty</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">Qty</div>
                                         <input name="quantity" type="number" value="{{item.quantity}}" min="0" max="999" class="form-control">
@@ -53,19 +52,8 @@
                                         </div> 
                                     </div>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <div class="input-group">
-                                        <label class="edit-size-label" for="size-options">Size:</label>
-                                            <select id="size-options" name="size-options">
-                                                {% for size_choices in item.product.size %}
-                                                        <option class="size-option">{{ size_choices }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        <button for="size-options" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>                               
-                                    </div>
-                                </div> -->
                             </form>
-                        </p>
+                    </p>
                 </div>
             </div>
         </div>
@@ -84,7 +72,7 @@
                 <p class="product-description">Total</p>
                 <p class="product-price"><span class="glyphicon glyphicon-pound" aria-hidden="true"></span>£{{ total }}</p>
                 {% if cart_items %}
-                    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"></span>Checkout</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Checkout</a>
                 {% endif %}
             </div>
         </div>
