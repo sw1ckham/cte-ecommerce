@@ -745,6 +745,8 @@ select:hover {
     position: relative;
     display: inline-block;
     height: 360px;
+    border: 1px solid #16c32b; 
+    border-radius: 10px;
 }
 
 .panel-heading:before, .panel-heading:after {
@@ -777,6 +779,12 @@ select:hover {
 @media (min-width: 768px) {
     .panel-body {
         height: 550px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .panel-body {
+        height: 475px;
     }
 }
 
