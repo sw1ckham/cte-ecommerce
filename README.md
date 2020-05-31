@@ -100,11 +100,11 @@ the initial view very simple and just a piece of his work.
 
 Wireframes images were hosted using [Imgbb](https://imgbb.com/upload)
 
-[Homepage Wireframe](https://ibb.co/ykSk7Hx)
-[About page wireframe](https://ibb.co/VtFwtnC)
-[Register wireframe](https://ibb.co/NZxBxYj)
-[Shop wireframe](https://ibb.co/5RpCFRV)
-[Cart wireframe](https://ibb.co/zJwLh7g)
+* [Homepage Wireframe](https://ibb.co/ykSk7Hx)
+* [About page wireframe](https://ibb.co/VtFwtnC)
+* [Register wireframe](https://ibb.co/NZxBxYj)
+* [Shop wireframe](https://ibb.co/5RpCFRV)
+* [Cart wireframe](https://ibb.co/zJwLh7g)
 
 ### Features
 
