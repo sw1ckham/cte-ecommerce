@@ -246,6 +246,66 @@ Since updating the Pillow version and my requirements.txt the builds have been p
 
 ### Deployment 
 
+#### Local Deployment
+
+For local deployment, make sure you have Python installed and are using a virtual environment. 
+
+* Log into your GitHub
+* Find the repository via this link [CTE-eddery](https://github.com/sw1ckham/cte-ecommerce) 
+* Click on clone or download, copy the clone URL under clone with HTTPS (remember to unzip your files). Or Type git clone, and then paste the URL you copied. example: $ git clone https://github.com/sw1ckham/cte-ecommerce
+* Find your file by typing cd FILEPATH into your CLI. 
+* Create an env.py file and add your own credenials. 
+* Create a requirements.txt file and install to requirements using this command: sudo -H pip3 -r requirements.txt
+* In your terminal, run the Django project with this command: python3 manage.py runserver
+* Once the server has been run, an db.sqlite database will have been create. 
+* Migrate all database schema with these two commands
+    python manage.py makemigrations
+    python manage.py migrate
+* To log into the admin panel, create a new user
+    python manage.py createsuperuser
+
+#### Remote deployment 
+
+#### Heroku Deployment and AWS bucket
+
+The following steps are how to create an app in heroku and connect it to...
+
+1. Login to heroku and go into your personal apps.
+2. Click New in the top right corner and create a new app, pick your closest region.
+3. In your CLI associate the heroku application as our remote master branch - heroku git:remote - a [app name]
+
+The following steps on how to deploy this project to Heroku...
+
+1. Add a requirements file [list of applications heroku requires to run the app](##requirements) - pip3 freeze --local > requirements.txt
+2. Git add and commit requirements file
+3. Add a Procfile (we need to tell heroku which file is used as our entry point to the app) - echo web: python app.py > Procfile
+4. Git add and commit Procfile file
+5. Login to Heroku: heroku login -i 
+    if an error message shows saying 'command not found', install heroku: npm install -g heroku
+6. Push to Github and Heroku - git push origin master && git push heroku master
+7. Tell Heroku to get the app up and running - heroku ps:scale web=1
+8. Go to settings in Heroku - Reveal config vars - Add all .env key value pairs to config variables. 
+9. Go to the resources tab in heroku. Go to 'Add ons' and search postgres database. Select the free option and make sure to add the postgres database url to your 
+env.py file from your config variables. 
+10. Open App!
+11. Make sure you connect to the postgres database by configuring your settings using dj_databse_url
+12. Make your migrations and create a new super user. 
+
+The following steps on how to set up your AWS S3 bucket...
+
+1. Create a new AWS account. 
+2. Click on S3 and create a new S3 bucket. Set up your Cors configuraition and Bucket Policy. 
+3. Go to the IAM section. Create a new group with your bucket name.
+4. Create a new user and policy and connect to the group you just created. 
+5. Push your static files to the bucket using the command : python3 manage.py collectstatic
+
+The following steps are how to set up your Stripe account...
+
+1. Create a new free stripe account. 
+2. Click on the API keys and copy them into your env.py file and config vars in Heroku. 
+3. All set!
+
+
 ## Acknowledgements
 
 ### Media
