@@ -25,6 +25,8 @@ options, the user can purchase a product securely with our Stripe integration.</
 
 [**Technologies used**](#technologies-used)
 
+[**Requirements file**](#requirements-file)
+
 [**Testing**](#testing)
 
 [**Deployment**](#deployment)
@@ -68,7 +70,7 @@ As a user I want
 
 ### Design Choices
 
-CTE=ecommerce is dark themed with pops of colour throughout. The minimilistic approach suits the needs of the owner of the site, emphasing his colourful art work with a dark background.
+CTE-ecommerce is dark themed with pops of colour throughout. The minimilistic approach suits the needs of the owner of the site, emphasing his colourful art work with a dark background.
 The site is simple and clean, the users main needs for the site are observing art work with thought to maybe purchasing a print, there's no need for any other clutter in the background.
 
 1. Buttons
@@ -133,7 +135,7 @@ pay for their products and the address can be different each time to deliver too
 * Postgres SQL
 * [GitHub](https://github.com/sw1ckham/cte-ecommerce)
 
-## Requirement files
+### Requirement files
 
 1. boto3==1.13.12 - The Amazon Web Services (AWS) Software Development Kit (SDK) for Python. 
 2. botocore==1.16.12 - The foundation for the AWS-CLI command line utilities.
@@ -189,7 +191,7 @@ All testing was carried out on all screen devices, Google Chrome, FireFox and In
 
 1. Pointed out unnecessary semi-colon, deleted. 
 
-## Manual Testing 
+### Manual Testing 
 
 Carried out by myself, and two other third parties. 
 
@@ -217,12 +219,12 @@ Carried out by myself, and two other third parties.
 
 7. You are able to edit the quantity of your product in the cart. 
 
-## Bugs found during Testing
+### Bugs found during Testing
 
 1. Error messages on register and login pages were same colour as background - could not see!
 * Solution - Styled default error messages in custom.css
 
-## Bugs found during developement
+### Bugs found during developement
 
 1. No Quantity auto fill
 * [Solution](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number) 
@@ -235,7 +237,7 @@ default value rendered. I added value="1" to my input html which stopped the pro
 3. User was able to refresh success.html and redo form submission which would throw a stripe error as it is trying to take the payment again, but the cart is empty as they already paid.
 * Solution - had to redirect users back to an empty cart page with a 'Success your payment has gone through message'.
 
-## Continous Testing
+### Continous Testing
 
 I have used [Travis-CI](https://travis-ci.org/github/sw1ckham/cte-ecommerce) 
 
@@ -276,7 +278,7 @@ The following steps are how to create an app in heroku and connect it to...
 
 The following steps on how to deploy this project to Heroku...
 
-1. Add a requirements file [list of applications heroku requires to run the app](##requirements) - pip3 freeze --local > requirements.txt
+1. Add a requirements file [list of applications heroku requires to run the app](#requirements-file) - pip3 freeze --local > requirements.txt
 2. Git add and commit requirements file
 3. Add a Procfile (we need to tell heroku which file is used as our entry point to the app) - echo web: python app.py > Procfile
 4. Git add and commit Procfile file
@@ -306,7 +308,7 @@ The following steps are how to set up your Stripe account...
 3. All set!
 
 
-## Acknowledgements
+### Acknowledgements
 
 ### Media
 
