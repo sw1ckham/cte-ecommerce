@@ -2,9 +2,10 @@
 
 CTE-Ecommerce
 
-<p>CTE-ecommerce is fully responsive </p>
-
-## Table of contents
+<p>CTE-ecommerce is a fully responsive digital art ecommerce site. It allows users to browse and purchase Cormac Edderys artwork. As a semi-professional artist
+for many years, he has been looking for a medium in which to expose, advertise and sell his portfolio. By keeping the gallery and shop seperate, it gives 
+users a clear understanding of what is for sale and what is not. The site is streamlined and functional, providing great user experience. With authorised login and register
+options, the user can purchase a product securely with our Stripe integration.</p>
 
 [**Project Goals**](#project-goals)
 
@@ -67,27 +68,27 @@ As a user I want
 
 ### Design Choices
 
-CTE ecommerce is dark themed with splashes of light green colour throughout. The minimilistic approach suits the needs of the owner of the site, emphasing his colourful art work with a dark background.
-The site is simple and clean, the users main needs for the site are observing and Artists art work with thought to maybe purchasing a print, there's no need for any other clutter in the background.
+CTE=ecommerce is dark themed with pops of colour throughout. The minimilistic approach suits the needs of the owner of the site, emphasing his colourful art work with a dark background.
+The site is simple and clean, the users main needs for the site are observing art work with thought to maybe purchasing a print, there's no need for any other clutter in the background.
 
 1. Buttons
-* All buttons have the same stylings. I chose a bright green to compliment the theme throughout the site, and nice transition increasing the scale to improve the user experience. 
+* All buttons have the same stylings. I chose dark grey buttons with a white trim to compliment the theme throughout the site, and bright green transition increasing the scale to improve the user experience. 
 
 2. [Font](https://fonts.google.com/specimen/Montserrat+Alternates?sidebar.open&query=Montserrat+Alternates)
-* Montserrat Alternates - I chose this as the font throughout the site because it is unique to a lot of your other site in an Artistic way, but is also clearly ledgeable.
+* Montserrat Alternates - I chose this as the font throughout the site because it is fun and unique, like the artist and his artwork! The font is also fully ledgeable. 
 
 3. Icons
-* I have used an Icon in place of the cart/shopping trolley header, also amend buttons in the cart.
+* I have used an Icon in place of the cart/shopping trolley header, social icons and amend buttons in the cart.
 
 4. Forms
-* All forms are uniform and styled with green backgrounds for nice design. 
+* All forms are uniform and styled with a dark grey background and white font, in keeping with the colour scheme webiste. 
 
 5. Product Panels
-* The product panels are transparent other than the image of the art work. The description is hidden, accessible via a plus icon. This effect is again, to pay as much attention to 
+* The product panels are transparent other than the image of the art work. The description is hidden, accessible via a plus icon, or buy here text in the shop. This effect is to pay as much attention to 
 the art itself and keep the site clean and uncluttered. 
 
 6. Footer & Navbar
-* Dark backgrounds and white text, keeping to the website theme I chose a light green hover transition on the social icons. 
+* Dark backgrounds and white text, keeping to the website theme I chose a light green hover transition on the social icons.
 
 7. Background images as front page
 * Due to the owner of the sites request, the desktop and mobile homepage will be a digital piece of art work made by the owner himself. He wants to keep 
@@ -95,11 +96,11 @@ the initial view very simple and just a piece of his work.
 
 ### Wireframes
 
+
+
 ### Features
 
-* Back to the top button on a large screen
-* Instagram plug in
-* Sending an email from the About page
+* Back to the top button on mobile devices
 * Add to Cart
 * Adjust Cart items
 * Checkout with Stripe payments
@@ -109,6 +110,7 @@ the initial view very simple and just a piece of his work.
 
 * I need to implement a feature that allows the user to edit their information after registering with us, this is good practise, but at the moment not a nessecity as they use a seperate form to
 pay for their products and the address can be different each time to deliver too. 
+* Size choices.
 * I will be implementing a price changing feature. The price will not be visible until you pick a size of a print, then the price will be dependant on the size chosen.
 * I will be implementing a feature to sign up to a regular email show caseing new pieces of art. 
 * I will be creating a Cart Model so when the user logs out, their shopping cart will be saved. I will also be able to implement the cart 
@@ -128,7 +130,7 @@ pay for their products and the address can be different each time to deliver too
 
 * Python
 * [Heroku](https://dashboard.heroku.com/)
-* [Postgres SQL]()
+* Postgres SQL
 * [GitHub](https://github.com/sw1ckham/cte-ecommerce)
 
 ## Requirement files
@@ -243,10 +245,6 @@ Since updating the Pillow version and my requirements.txt the builds have been p
 * [![Build Status](https://travis-ci.org/sw1ckham/cte-ecommerce.svg?branch=master)](https://travis-ci.org/sw1ckham/cte-ecommerce)
 
 ### Deployment 
-
-
-
-
 
 ## Acknowledgements
 
