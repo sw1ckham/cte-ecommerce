@@ -98,7 +98,11 @@ the initial view very simple and just a piece of his work.
 
 ### Wireframes
 
-
+[Homepage Wireframe](https://ibb.co/ykSk7Hx)
+[About page wireframe](https://ibb.co/VtFwtnC)
+[Register wireframe](https://ibb.co/NZxBxYj)
+[Shop wireframe](https://ibb.co/5RpCFRV)
+[Cart wireframe](https://ibb.co/zJwLh7g)
 
 ### Features
 
@@ -278,7 +282,7 @@ The following steps are how to create an app in heroku and connect it to...
 
 The following steps on how to deploy this project to Heroku...
 
-1. Add a requirements file [list of applications heroku requires to run the app](#requirements-file) - pip3 freeze --local > requirements.txt
+1. Add a requirements file [**list of applications heroku requires to run the app**](#requirements-file) - pip3 freeze --local > requirements.txt
 2. Git add and commit requirements file
 3. Add a Procfile (we need to tell heroku which file is used as our entry point to the app) - echo web: python app.py > Procfile
 4. Git add and commit Procfile file
