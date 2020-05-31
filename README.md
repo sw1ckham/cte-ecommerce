@@ -98,6 +98,8 @@ the initial view very simple and just a piece of his work.
 
 ### Wireframes
 
+Wireframes images were hosted using [Imgbb](https://imgbb.com/upload)
+
 [Homepage Wireframe](https://ibb.co/ykSk7Hx)
 [About page wireframe](https://ibb.co/VtFwtnC)
 [Register wireframe](https://ibb.co/NZxBxYj)
