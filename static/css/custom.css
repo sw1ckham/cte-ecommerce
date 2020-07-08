@@ -827,6 +827,10 @@ select:hover {
     border-radius: 10px;
 }
 
+.toggle-show-icon {
+    cursor: pointer;
+}
+
 /*-- Stripe error message --*/
 
 #stripe-error-message {
